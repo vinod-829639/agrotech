@@ -15,41 +15,11 @@
     </style>
 </head>
 <body>
-    <button id="bookNow">Book Now</button>
     <iframe id="bookingForm" width="640px" height="480px" 
         src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__l6UomZUQkM2Qk9aTTVBUEszVUNERUQ2VDNPNEw0Ni4u&embed=true" 
         frameborder="0" marginwidth="0" marginheight="0" 
         style="border: none; max-width:100%; max-height:100vh" 
         allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
     </iframe>
-
-    <script>
-        // Firebase configuration
-       const firebaseConfig = {
-  apiKey: "AIzaSyArbQSbeNYPBao1tgV2mMWWta7ThBSCJFw",
-  authDomain: "agrotech-a1327.firebaseapp.com",
-  databaseURL: "https://agrotech-a1327-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "agrotech-a1327",
-  storageBucket: "agrotech-a1327.firebasestorage.app",
-  messagingSenderId: "909449543844",
-  appId: "1:909449543844:web:416b79478f03529480a631",
-  measurementId: "G-CBYNL5X1GR"
-};
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-
-        document.getElementById("bookNow").addEventListener("click", function() {
-            firebase.auth().onAuthStateChanged(user => {
-                if (user) {
-                    // User is logged in, proceed with booking
-                    document.getElementById("bookingForm").style.display = "block";
-                } else {
-                    // User is not logged in, redirect to login page
-                    window.location.href = "login.html";
-                }
-            });
-        });
-    </script>
 </body>
 </html>
