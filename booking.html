@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agriculture Field Visit Booking</title>
-     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-    <script type="module" src="firebase-config.js"></script>
-    <style>
-        iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-        }
-    </style>
-</head>
-<body>
-     <script type="module">
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+        // Firebase Configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyArbQSbeNYPBao1tgV2mMWWta7ThBSCJFw",
+  authDomain: "agrotech-a1327.firebaseapp.com",
+  databaseURL: "https://agrotech-a1327-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "agrotech-a1327",
+  storageBucket: "agrotech-a1327.firebasestorage.app",
+  messagingSenderId: "909449543844",
+  appId: "1:909449543844:web:416b79478f03529480a631",
+  measurementId: "G-CBYNL5X1GR"
+};
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
         let currentUser = null;
 
-        // Firebase Authentication Check
-        firebase.auth().onAuthStateChanged(user => {
+        // Check Authentication
+        onAuthStateChanged(auth, (user) => {
             if (user) {
                 currentUser = user;
                 console.log("User logged in:", user.email);
@@ -31,14 +41,36 @@
         });
 
         // Prevent Form Submission If Not Logged In
-        document.getElementById("booking-form").addEventListener("submit", function(event) {
-            if (!currentUser) {
-                alert("You must be logged in to submit the form!");
-                event.preventDefault(); // Stop form submission
+        document.addEventListener("DOMContentLoaded", () => {
+            const bookingForm = document.getElementById("booking-form");
+            if (bookingForm) {
+                bookingForm.addEventListener("submit", (event) => {
+                    if (!currentUser) {
+                        alert("You must be logged in to submit the form!");
+                        event.preventDefault();
+                    }
+                });
             }
         });
     </script>
 
-    <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__l6UomZUQkM2Qk9aTTVBUEszVUNERUQ2VDNPNEw0Ni4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Agriculture Field Visit Booking</h2>
+
+    <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__l6UomZUQkM2Qk9aTTVBUEszVUNERUQ2VDNPNEw0Ni4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen></iframe>
+
 </body>
 </html>
