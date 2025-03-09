@@ -448,8 +448,7 @@ a:hover {
     }
 
     .content {
-        margin-left: 0;
-        padding: 10px;
+        margin-left: 250px; /* Push content to the right */
     }
 
     .content.active {
