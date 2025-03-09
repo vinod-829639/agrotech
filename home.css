@@ -914,3 +914,58 @@ a:hover {
         margin-top: 6px;
     }
 }
+/* Styles for Mobile Screens */
+@media (max-width: 767px) {
+    /* Make the header sticky on mobile */
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    /* Adjust header content for smaller screens */
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; /* Ensure logo and toggle stay on ends */
+        padding: 0.5rem 1rem;
+    }
+
+    .toggle-button {
+        order: -1; /* Move toggle button to the start */
+        margin-right: 0; /* Adjust margin */
+    }
+
+    .header-logo-text {
+        font-size: 1.5rem; /* Smaller logo text */
+        margin-left: auto;  /*Push logo to the right */
+        margin-right: 0;
+    }
+
+    /* Ensure navigation elements are hidden */
+    .navigation {
+        display: none;
+    }
+
+    /* Style the logo text */
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    /* Revert .content to have full width and reset margin */
+    .content {
+        margin-left: 0;
+    }
+
+    /* Adjust padding */
+    body,
+    .content {
+        padding: 0;
+    }
+    .sidebar.active + .content .header .navigation,
+   .header-content .navigation,
+    .header-content .search-container,
+    .header-content .cta-button {
+        display: none; /* Hide navigation on mobile */
+     }
+}
