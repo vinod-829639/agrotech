@@ -1,5 +1,5 @@
 /* ========================================
-   General Styles (Mobile First)
+   General Styles (Mobile First) - MOST IMPORTANT
    ======================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,8 +8,8 @@ body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
-    /* Default font size for mobile - can adjust */
-    font-size: 16px;
+    font-size: 16px; /* Base font size */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 a {
@@ -34,7 +34,7 @@ a:hover {
     position: fixed;
     top: 0;
     left: -100%; /* Hidden off-screen */
-    padding: 1em; /* Use em for relative padding */
+    padding: 1em;
     box-sizing: border-box;
     z-index: 100;
     opacity: 0;
@@ -83,7 +83,6 @@ a:hover {
 .content {
     position: relative;
     transition: margin-left 0.3s ease;
-    /* Removed margin-left here */
 }
 
 /* ========================================
@@ -441,48 +440,6 @@ a:hover {
     margin: 0;
     font-size: 0.7rem;
 }
-
-/* ========================================
-   Mobile Specific Adjustments and Larger Screen Enhancements
-   ======================================== */
-@media (min-width: 768px) {
-    /* --- Desktop Specific Styles --- */
-
-    .sidebar {
-        position: fixed;
-        left: 0; /* Always visible */
-        top: 0;
-        width: 250px;
-        height: 100vh;
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0); /* No initial transform */
-    }
-
-    .content {
-        margin-left: 250px; /* Push content to the right */
-    }
-
-    .toggle-button {
-        display: none; /* Hide the toggle button */
-    }
-
-    .navigation {
-        display: flex; /* Show the navigation bar */
-    }
-
-    .navigation .search-container {
-        display: block; /* Show search on desktop */
-    }
-    .header-content {
-        justify-content: flex-start; /* Revert to left alignment */
-    }
-
-    .header-logo-text {
-        margin-right: auto; /* Push logo to the left */
-    }
-}
-
 /* Basic Dropdown Button Styling */
 .dropdown {
     position: relative;
@@ -844,28 +801,69 @@ a:hover {
     background-color: #1e2d3b;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 480px) {
-    .chat-container {
-        width: 90%;
-        max-width: 350px;
-        bottom: 20px;
-        right: 5%;
-        left: 5%;
+/* ========================================
+   Larger Screen Enhancements
+   ======================================== */
+@media (min-width: 768px) {
+    /* --- Desktop Specific Styles --- */
+
+    .sidebar {
+        position: fixed;
+        left: 0; /* Always visible */
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0); /* No initial transform */
     }
 
-    #chat-toggle {
-        bottom: 15px;
-        right: 15px;
+    .content {
+        margin-left: 250px; /* Push content to the right */
     }
 
-    .chat-footer {
-        flex-direction: column;
-        padding: 6px;
+    .toggle-button {
+        display: none; /* Hide the toggle button */
     }
 
-    .chat-footer button {
-        margin-left: 0;
-        margin-top: 6px;
+    .navigation {
+        display: flex; /* Show the navigation bar */
+    }
+
+    .navigation .search-container {
+        display: block; /* Show search on desktop */
+    }
+    .header-content {
+        justify-content: flex-start; /* Revert to left alignment */
+    }
+
+    .header-logo-text {
+        margin-right: auto; /* Push logo to the left */
+    }
+}
+
+/* ========================================
+   Small Screen Overrides (Important for "Desktop Mode" on Mobile)
+   ======================================== */
+@media (max-width: 767px) { /* Target small screens */
+    /*Override header related CSS */
+      .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+         /* Add style to header */
+    .header-logo-text {
+        margin-left: auto; /* Pushes logo to the right */
+        margin-right: 0; /* Removes the right margin */
+    }
+   /* Hide Navigation Code On Smaller Screens*/
+ /*   .sidebar.active + .content .header .navigation {
+       display: none;
+     } Remove*/
+ .header-content .navigation,
+    .header-content .search-container,
+    .header-content .cta-button {
+       display: none; /* Hide navigation on mobile */
     }
 }
