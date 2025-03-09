@@ -442,47 +442,6 @@ a:hover {
     font-size: 0.7rem;
 }
 
-/* ========================================
-   Larger Screen Enhancements
-   ======================================== */
-@media (min-width: 768px) {
-    /* --- Desktop Specific Styles --- */
-
-    .sidebar {
-        position: fixed;
-        left: 0; /* Always visible */
-        top: 0;
-        width: 250px;
-        height: 100vh;
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0); /* No initial transform */
-    }
-
-    .content {
-        margin-left: 250px; /* Push content to the right */
-    }
-
-    .toggle-button {
-        display: none; /* Hide the toggle button */
-    }
-
-    .navigation {
-        display: flex; /* Show the navigation bar */
-    }
-
-    .navigation .search-container {
-        display: block; /* Show search on desktop */
-    }
-    .header-content {
-        justify-content: flex-start; /* Revert to left alignment */
-    }
-
-    .header-logo-text {
-        margin-right: auto; /* Push logo to the left */
-    }
-}
-
 /* Basic Dropdown Button Styling */
 .dropdown {
     position: relative;
@@ -625,28 +584,18 @@ a:hover {
     opacity: 1;
     transform: translateY(0);
 }
- /* Hide Navigation Code On Smaller Screens*/
-   @media (max-width: 768px) {
-    /* Add the following code so content of navigation will be disable when slide bar is enabled in small screen */
-   .sidebar.active + .content .header .navigation,
-   .header-content .navigation,
-    .header-content .search-container,
-    .header-content .cta-button {
-        display: none; /* Hide navigation on mobile */
-     }
-    }
-    
-    /* Chat Toggle Button */
-#full{
+
+/* Chat Toggle Button */
+#full {
     font-family: 'Roboto', sans-serif;
     background-color: #ecf0f1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height:0;
+    height: 0;
     margin: 0;
-
 }
+
 #chat-toggle {
     position: fixed;
     bottom: 20px;
@@ -902,4 +851,10 @@ a:hover {
     .header-logo-text {
         /* Use mobile default logo */
     }
+    .sidebar.active + .content .header .navigation,
+   .header-content .navigation,
+    .header-content .search-container,
+    .header-content .cta-button {
+        display: none; /* Hide navigation on mobile */
+     }
 }
