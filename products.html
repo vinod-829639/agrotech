@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More - AgroTech Products</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <span class="logo-text">Agrotech</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="products.html"><i class="fas fa-arrow-left"></i> Back</a></li> 
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="product.html"><i class="fas fa-seedling"></i> Products</a></li>
+            <li><a href="services.css"><i class="fas fa-leaf"></i> Field Visit</a></li>
+            <li><a href="booking.html"><i class="fas fa-calendar-alt"></i> Book Now</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="registration.html"><i class="fas fa-user-plus"></i> Get Started</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+
+        </ul>
+    </div>
+    <header class="header">
+        <div class="header-content">
+            <button class="toggle-button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="header-logo-text">Agrotech</span>
+            <div class="dropdown">
+                <button class="dropdown-button">services</button>
+                <div class="dropdown-content">
+                  <a href="services.html">Field visit</a>
+                  <a href="solutions.html">Solutions</a>
+                  <a href="products.html">Products</a>
+                </div>
+              </div>
+            <nav class="navigation">
+                <div class="search-container">
+                    <div class="search-inner">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchBarNav" placeholder="Search..." oninput="searchWebsiteNav()" onkeydown="handleKeyPress(event)">
+                        <button id="clearBtnNav" onclick="clearSearchNav()" type="button">
+                            <i class="fas fa-times clear-icon"></i>
+                        </button>
+                    </div>
+                    <ul id="searchResultsNav" class="search-results"></ul>
+                </div>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="booking.html">Book Now</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="registration.html" class="cta-button">Get Started</a>
+            </nav>
+        </div>
+    </header>
+<main>
+    <section>
+        <h2>TYPES OF PRODUCT FROM AGROTECH</h2>
+        <p>At AgroTech, we offer a wide range of products designed to protect your crops and ensure healthy, high-yielding harvests. Our solutions are developed with advanced technology to provide you with effective, eco-friendly, and affordable options for pest and disease control.</p>
+    </section>
+
+    <section>
+        <h2>1. Herbicides</h2>
+        <h4>Purpose:</h4>
+        <p>Control and manage weed growth that competes with crops for nutrients, water, and light.</p>
+        <h4>Key Features:</h4>
+        <ul>
+            <li><strong>Effective Weed Control:</strong> Targets a broad spectrum of weeds without harming your crops.</li>
+            <li><strong>Precision Application:</strong> Our herbicides are designed to minimize drift and reduce environmental impact.</li>
+            <li><strong>Long-Lasting Action:</strong> Provides lasting protection to keep your fields weed-free throughout the growing season.</li>
+            <li><strong>Reduced Labor Costs:</strong> Easy application methods that reduce the need for manual labor or mechanical weeding.</li>
+        </ul>
+        <h4>Benefits:</h4>
+        <ul>
+            <li>Improves crop yield by reducing competition for resources.</li>
+            <li>Enhances field aesthetics by keeping the soil and crops clear of unwanted vegetation.</li>
+            <li>Protects crop quality and reduces the risk of weed-related diseases.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Insecticides</h2>
+        <h4>Purpose:</h4>
+        <p>Protect crops from harmful insect pests that damage plant tissues, spread diseases, and reduce crop productivity.</p>
+        <h4>Key Features:</h4>
+        <ul>
+            <li><strong>Targeted Action:</strong> Designed to affect specific insect pests, such as aphids, caterpillars, and beetles, while minimizing harm to beneficial insects like bees and ladybugs.</li>
+            <li><strong>Fast-Acting:</strong> Provides rapid knockdown of pests to quickly restore crop health.</li>
+            <li><strong>Versatile Application:</strong> Suitable for a variety of crops including fruits, vegetables, and grains.</li>
+            <li><strong>Systemic and Contact Action:</strong> Offers both systemic (absorbed by the plant) and contact (targeting insects directly) actions for comprehensive pest control.</li>
+        </ul>
+        <h4>Benefits:</h4>
+        <ul>
+            <li>Protects crops from yield loss due to insect feeding.</li>
+            <li>Reduces the spread of insect-borne diseases.</li>
+            <li>Safeguards the food supply by ensuring healthier, pest-free produce.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Fungicides</h2>
+        <h4>Purpose:</h4>
+        <p>Shield your crops from fungal diseases such as powdery mildew, blight, rust, and more.</p>
+        <h4>Key Features:</h4>
+        <ul>
+            <li><strong>Preventative and Curative:</strong> Effective both as a preventive measure and for treating existing fungal infections.</li>
+            <li><strong>Broad-Spectrum Control:</strong> Protects a wide range of crops from fungal pathogens.</li>
+            <li><strong>Long-Lasting Protection:</strong> Provides ongoing protection to prevent reinfection during the growing season.</li>
+            <li><strong>Easy Application:</strong> Designed for easy application, whether through spraying, drenching, or soil treatment.</li>
+        </ul>
+        <h4>Benefits:</h4>
+        <ul>
+            <li>Reduces the risk of fungal diseases that can stunt growth and reduce harvest quality.</li>
+            <li>Increases crop resilience and productivity by minimizing fungal infections.</li>
+            <li>Enhances the storage life of harvested produce by preventing fungal spoilage.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Biopesticides</h2>
+        <h4>Purpose:</h4>
+        <p>Offer eco-friendly pest control solutions using natural organisms or plant-based compounds to protect crops sustainably.</p>
+        <h4>Key Features:</h4>
+        <ul>
+            <li><strong>Natural Ingredients:</strong> Derived from plant extracts, beneficial insects, or microbial organisms like bacteria and fungi.</li>
+            <li><strong>Low Environmental Impact:</strong> Biopesticides break down naturally, leaving no harmful residues in the soil or water.</li>
+            <li><strong>Targeted Action:</strong> Controls pests and diseases while preserving beneficial species like pollinators and natural predators.</li>
+            <li><strong>Safety for Humans and Animals:</strong> Non-toxic to humans, animals, and birds, making it safe for use around homes, schools, and gardens.</li>
+        </ul>
+        <h4>Benefits:</h4>
+        <ul>
+            <li>Promotes sustainability by reducing the need for chemical pesticides.</li>
+            <li>Enhances biodiversity by protecting beneficial organisms that support healthy ecosystems.</li>
+            <li>Ideal for organic and eco-conscious farmers looking to reduce chemical inputs.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Why Choose AgroTech Products?</h2>
+        <ul>
+            <li><strong>Cutting-Edge Formulations:</strong> Our products are developed with the latest research and technology to ensure maximum efficiency and safety for both crops and the environment.</li>
+            <li><strong>Comprehensive Solutions:</strong> From herbicides to biopesticides, we offer a complete range of solutions tailored to various crop needs and pest challenges.</li>
+            <li><strong>Sustainability Focused:</strong> We prioritize eco-friendly and sustainable practices in all our product development processes to help farmers maintain both productivity and environmental health.</li>
+            <li><strong>Expert Support:</strong> Our team of agronomists and experts are available to guide you through the best product choices and application methods to maximize effectiveness.</li>
+        </ul>
+    </section>
+</main>
+<button id="chat-toggle" onclick="toggleChat()">🌻 Chat</button>
+
+<!-- Chat Container -->
+ <div id="full">
+<div class="chat-container" id="chat-container">
+    <div class="chat-header">
+        <button onclick="clearChat()">🔄</button> <!-- Clear Chat Button -->
+        <span>Agrotech Bot 🪴</span>
+        <button onclick="toggleChat()">❌</button> <!-- Close Chat Button -->
+    </div>
+    
+    <!-- Chat Box -->
+    <div id="chat-box"></div>
+    
+    <!-- Chat Footer -->
+    <div class="chat-footer">
+        <input type="text" id="user-input" placeholder="Ask me anything..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+</div>
+
+<script>
+    function toggleChat() {
+        let chatContainer = document.getElementById("chat-container");
+        let chatButton = document.getElementById("chat-toggle");
+
+        if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
+            chatContainer.style.display = "block"; // Open chat
+            chatButton.style.display = "none"; // Hide chat button when open
+        } else {
+            chatContainer.style.display = "none"; // Close chat
+            chatButton.style.display = "block"; // Show chat button again
+        }
+    }
+
+    function clearChat() {
+        document.getElementById("chat-box").innerHTML = ""; // Clears chat messages
+    }
+</script>
+<script src="cht.js"></script>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Agrotech</h3>
+            <p>Agrotech is committed to delivering innovative agricultural solutions to empower farmers and ensure a sustainable future. We provide cutting-edge technologies and eco-friendly products.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Near SBI Bank, Devadurga Circle, Raichur Road, Sirwar</p>
+            <p><i class="fas fa-phone-alt"></i> +91 8296390210</p>
+            <p><i class="fas fa-envelope"></i> vkumar25724@gmail.com</p>
+        </div>
+        <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Stay updated with our latest news and products!</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit"><i class="fas fa-envelope"></i> Subscribe</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom" align="center">
+        <p>© 2025 Agrotech. All rights reserved.</p>
+        <p>Devloped By Vinod Hosmani</p>
+    </div>
+</footer>
+<script>
+    const toggleButton = document.querySelector('.toggle-button');
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.querySelector('.content');
+
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        content.classList.toggle('active');
+    });
+
+    function searchWebsiteNav() {
+        const searchTerm = document.getElementById('searchBarNav').value.toLowerCase();
+        const searchResults = document.getElementById('searchResultsNav');
+        searchResults.innerHTML = '';
+
+        const allText = document.body.innerText.toLowerCase();
+        if (searchTerm && allText.includes(searchTerm)) {
+            const resultItem = document.createElement('li');
+            resultItem.textContent = `Found "${searchTerm}" on this page.`;
+            searchResults.appendChild(resultItem);
+        } else if (searchTerm) {
+            const resultItem = document.createElement('li');
+            resultItem.textContent = `No results found for "${searchTerm}".`;
+            searchResults.appendChild(resultItem);
+        }
+
+        const clearBtn = document.getElementById('clearBtnNav');
+        clearBtn.style.display = searchTerm ? 'block' : 'none';
+    }
+
+    function clearSearchNav() {
+        document.getElementById('searchBarNav').value = '';
+        document.getElementById('searchResultsNav').innerHTML = '';
+
+        const clearBtn = document.getElementById('clearBtnNav');
+        clearBtn.style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const clearBtn = document.getElementById('clearBtnNav');
+        clearBtn.style.display = 'none';
+    });
+</script>
+<script>
+    
+    // Predefined search suggestions with their respective URLs
+    const searchItems = [
+    { name: "Home", url: "index.html" },
+        { name: "About Us", url: "about.html" },
+        { name: "Services", url: "services.html" },
+        { name: "Contact", url: "contact.html" },
+        { name: "Registration", url: "registration.html" },
+        { name: "Products", url: "products.html" },
+        { name: "Login", url: "login.html" },
+        { name: "Book Now", url: "booking.html" },
+        { name: "Solution", url: "solutions.html" }
+    ];
+
+    function searchWebsiteNav() {
+        let input = document.getElementById("searchBarNav").value.toLowerCase();
+        let resultsContainer = document.getElementById("searchResultsNav");
+        resultsContainer.innerHTML = ""; // Clear previous results
+
+        if (input.trim() === "") {
+            resultsContainer.style.display = "none";
+            return;
+        }
+
+        let matches = searchItems.filter(item => item.name.toLowerCase().includes(input));
+
+        if (matches.length > 0) {
+            resultsContainer.style.display = "block";
+            matches.forEach(match => {
+                let li = document.createElement("li");
+                li.textContent = match.name;
+                li.onclick = () => window.location.href = match.url; // Navigate on click
+                resultsContainer.appendChild(li);
+            });
+        } else {
+            resultsContainer.style.display = "none";
+        }
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === "Enter") {
+            let input = document.getElementById("searchBarNav").value.toLowerCase();
+            let match = searchItems.find(item => item.name.toLowerCase() === input);
+            if (match) {
+                window.location.href = match.url; // Navigate if exact match found
+            }
+        }
+    }
+
+    function clearSearchNav() {
+        document.getElementById("searchBarNav").value = "";
+        document.getElementById("searchResultsNav").innerHTML = "";
+        document.getElementById("searchResultsNav").style.display = "none";
+    }
+</script>
+<script src="sildebar.js"></script>
+</body>
+</html>
+</body>
+</html>

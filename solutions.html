@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroTech - Sustainable Farming Solutions</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <div class="sidebar">
+    <div class="sidebar-header">
+        <span class="logo-text">Agrotech</span>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="solutions.html"><i class="fas fa-arrow-left"></i> Back</a></li> 
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="services.html"><i class="fas fa-home"></i> field visit</a></li>
+        <li><a href="product.html"><i class="fas fa-sign-in-alt"></i> Products</a></li>
+        <li><a href="booking.html"><i class="fas fa-calendar-alt"></i> Book Now</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li><a href="registration.html"><i class="fas fa-user-plus"></i> Get Started</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+    </ul>
+</div>
+
+<div class="content">
+    <header class="header">
+        <div class="header-content">
+            <button class="toggle-button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="header-logo-text">Agrotech</span>
+            <div class="dropdown">
+                <button class="dropdown-button">services</button>
+                <div class="dropdown-content">
+                  <a href="services.html">Field visit</a>
+                  <a href="solutions.html">Solutions</a>
+                  <a href="products.html">Products</a>
+                </div>
+              </div>
+            <nav class="navigation">
+              <div class="search-container">
+                <div class="search-inner">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchBarNav" placeholder="Search..." oninput="searchWebsiteNav()" onkeydown="handleKeyPress(event)">
+                    <button id="clearBtnNav" onclick="clearSearchNav()" type="button">
+                        <i class="fas fa-times clear-icon"></i>
+                    </button>
+                </div>
+                <ul id="searchResultsNav" class="search-results"></ul>
+            </div>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="booking.html">Book Now</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html">Login</a>
+                <a href="registration.html" class="cta-button">Get Started</a>
+            </nav>
+        </div>
+    </header>
+  <style>
+       header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #2E7D32;
+      margin-top: 0;
+      font-size: 2rem;
+      border-bottom: 2px solid #2E7D32;
+      padding-bottom: 10px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    .section {
+    margin-bottom: 40px;
+    padding: 35px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #dee2e6;
+}
+
+.section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section h2 {
+    color: #212529;
+    font-size: 2.3rem;
+    margin-bottom: 22px;
+    border-bottom: 2px solid #2E7D32;
+    padding-bottom: 8px;
+}
+
+.section p {
+    line-height: 1.7;
+    color: #495057;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <!-- Advanced Formulations Section -->
+    <section class="section">
+      <h2>Advanced Formulations</h2>
+      <p>At AgroTech, our R&D team collaborates with agricultural scientists and industry experts to develop state-of-the-art pesticide formulations.</p>
+      <p>Each product undergoes rigorous testing in laboratories and field trials to ensure it effectively targets pests while being safe for beneficial organisms such as bees, butterflies, and earthworms.</p>
+      <p>Our formulations are optimized for different crops, climates, and pest infestations, delivering precision performance under various farming conditions.</p>
+      <p>By reducing the collateral damage to non-target species, our products help farmers maintain biodiversity and a healthy ecosystem.</p>
+    </section>
+
+    <!-- Eco-Friendly Solutions Section -->
+    <section class="section">
+      <h2>Eco-Friendly Solutions</h2>
+      <p>AgroTech is a pioneer in offering green farming solutions. Our eco-friendly pesticides are crafted to meet the highest environmental safety standards.</p>
+      <p>Our biopesticides, derived from natural sources like plant extracts, beneficial microbes, and essential oils, are highly effective against pests while being non-toxic to humans and animals.</p>
+      <p>We promote practices that reduce chemical dependency, such as companion planting, crop rotation, and pheromone traps.</p>
+      <p>Our goal is to ensure that your fields remain fertile and water bodies unpolluted, fostering a sustainable future for agriculture.</p>
+    </section>
+
+    <!-- Affordable Prices Section -->
+    <section class="section">
+      <h2>Affordable Prices</h2>
+      <p>We understand the financial challenges faced by farmers, especially smallholders, and strive to keep our products affordable without compromising quality.</p>
+      <p>AgroTech offers tiered pricing based on farm size, ensuring solutions are accessible to farmers with varying needs and budgets.</p>
+      <p>We frequently provide discounts during planting and harvesting seasons and offer bundle packages for farmers managing multiple crops.</p>
+      <p>Additionally, we support cooperatives and group buyers with wholesale pricing and long-term supply agreements.</p>
+    </section>
+
+    <!-- Expert Guidance Section -->
+    <section class="section">
+      <h2>Expert Guidance</h2>
+      <p>AgroTech takes pride in being more than a product provider; we are your agricultural ally.</p>
+      <p>Our agronomists visit your fields to analyze crop health, identify pest and disease problems, and recommend tailored solutions that suit your specific requirements.</p>
+      <p>We provide training sessions on safe pesticide application, equipment handling, and residue management to maximize efficiency and minimize risk.</p>
+      <p>Our ongoing support includes updates on emerging pest threats, weather patterns, and new farming techniques to keep you ahead of challenges.</p>
+      <p>AgroTech also organizes community workshops and digital webinars, making expert advice accessible to farmers in remote locations.</p>
+    </section>
+  </div>
+  <button id="chat-toggle" onclick="toggleChat()">🌻 Chat</button>
+
+  <!-- Chat Container -->
+   <div id="full">
+  <div class="chat-container" id="chat-container">
+      <div class="chat-header">
+          <button onclick="clearChat()">🔄</button> <!-- Clear Chat Button -->
+          <span>Agrotech Bot 🪴</span>
+          <button onclick="toggleChat()">❌</button> <!-- Close Chat Button -->
+      </div>
+      
+      <!-- Chat Box -->
+      <div id="chat-box"></div>
+      
+      <!-- Chat Footer -->
+      <div class="chat-footer">
+          <input type="text" id="user-input" placeholder="Ask me anything..." onkeypress="handleKeyPress(event)">
+          <button onclick="sendMessage()">Send</button>
+      </div>
+  </div>
+  </div>
+
+  <script>
+      function toggleChat() {
+          let chatContainer = document.getElementById("chat-container");
+          let chatButton = document.getElementById("chat-toggle");
+
+          if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
+              chatContainer.style.display = "block"; // Open chat
+              chatButton.style.display = "none"; // Hide chat button when open
+          } else {
+              chatContainer.style.display = "none"; // Close chat
+              chatButton.style.display = "block"; // Show chat button again
+          }
+      }
+
+      function clearChat() {
+          document.getElementById("chat-box").innerHTML = ""; // Clears chat messages
+      }
+  </script>
+  <script src="cht.js"></script>
+
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Agrotech</h3>
+            <p>Agrotech is committed to delivering innovative agricultural solutions to empower farmers and ensure a sustainable future. We provide cutting-edge technologies and eco-friendly products.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Near SBI Bank, Devadurga Circle, Raichur Road, Sirwar</p>
+            <p><i class="fas fa-phone-alt"></i> +91 8296390210</p>
+            <p><i class="fas fa-envelope"></i> vkumar25724@gmail.com</p>
+        </div>
+        <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Stay updated with our latest news and products!</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email" required>
+                <button type="submit"><i class="fas fa-envelope"></i> Subscribe</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom" align="center">
+        <p>© 2025 Agrotech. All rights reserved.</p>
+        <p>Devloped By Vinod Hosmani</p>
+    </div>
+</footer>
+</div>
+
+<script>
+const toggleButton = document.querySelector('.toggle-button');
+const sidebar = document.querySelector('.sidebar');
+const content = document.querySelector('.content');
+
+toggleButton.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    content.classList.toggle('active');
+});
+
+function searchWebsiteNav() {
+    const searchTerm = document.getElementById('searchBarNav').value.toLowerCase();
+    const searchResults = document.getElementById('searchResultsNav');
+    searchResults.innerHTML = '';
+
+    const allText = document.body.innerText.toLowerCase();
+    if (searchTerm && allText.includes(searchTerm)) {
+        const resultItem = document.createElement('li');
+        resultItem.textContent = `Found "${searchTerm}" on this page.`;
+        searchResults.appendChild(resultItem);
+    } else if (searchTerm) {
+        const resultItem = document.createElement('li');
+        resultItem.textContent = `No results found for "${searchTerm}".`;
+        searchResults.appendChild(resultItem);
+    }
+
+    const clearBtn = document.getElementById('clearBtnNav');
+    clearBtn.style.display = searchTerm ? 'block' : 'none';
+}
+
+function clearSearchNav() {
+    document.getElementById('searchBarNav').value = '';
+    document.getElementById('searchResultsNav').innerHTML = '';
+
+    const clearBtn = document.getElementById('clearBtnNav');
+    clearBtn.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const clearBtn = document.getElementById('clearBtnNav');
+    clearBtn.style.display = 'none';
+});
+</script>
+
+<script>
+  // Predefined search suggestions with their respective URLs
+  const searchItems = [
+  { name: "Home", url: "index.html" },
+        { name: "About Us", url: "about.html" },
+        { name: "Services", url: "services.html" },
+        { name: "Contact", url: "contact.html" },
+        { name: "Registration", url: "registration.html" },
+        { name: "Products", url: "products.html" },
+        { name: "Login", url: "login.html" },
+        { name: "Book Now", url: "booking.html" },
+        { name: "Solution", url: "solutions.html" }
+  ];
+
+  function searchWebsiteNav() {
+      let input = document.getElementById("searchBarNav").value.toLowerCase();
+      let resultsContainer = document.getElementById("searchResultsNav");
+      resultsContainer.innerHTML = ""; // Clear previous results
+
+      if (input.trim() === "") {
+          resultsContainer.style.display = "none";
+          return;
+      }
+
+      let matches = searchItems.filter(item => item.name.toLowerCase().includes(input));
+
+      if (matches.length > 0) {
+          resultsContainer.style.display = "block";
+          matches.forEach(match => {
+              let li = document.createElement("li");
+              li.textContent = match.name;
+              li.onclick = () => window.location.href = match.url; // Navigate on click
+              resultsContainer.appendChild(li);
+          });
+      } else {
+          resultsContainer.style.display = "none";
+      }
+  }
+
+  function handleKeyPress(event) {
+      if (event.key === "Enter") {
+          let input = document.getElementById("searchBarNav").value.toLowerCase();
+          let match = searchItems.find(item => item.name.toLowerCase() === input);
+          if (match) {
+              window.location.href = match.url; // Navigate if exact match found
+          }
+      }
+  }
+
+  function clearSearchNav() {
+      document.getElementById("searchBarNav").value = "";
+      document.getElementById("searchResultsNav").innerHTML = "";
+      document.getElementById("searchResultsNav").style.display = "none";
+  }</script>
+<script src="sildebar.js"></script>
+</body>
+</html>

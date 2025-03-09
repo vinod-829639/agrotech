@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrotech - Sustainable Agriculture</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <span class="logo-text">Agrotech</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="fas fa-arrow-left"></i> Back</a></li> 
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="services.html"><i class="fas fa-leaf"></i> Field Visit</a></li>
+            <li><a href="products.html"><i class="fas fa-seedling"></i> Products</a></li>
+            <li><a href="booking.html"><i class="fas fa-calendar-alt"></i> Book Now</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="registration.html"><i class="fas fa-user-plus"></i> Get Started</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <header class="header">
+            <div class="header-content">
+                <button class="toggle-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <span class="header-logo-text">Agrotech</span>
+                <div class="dropdown">
+                    <button class="dropdown-button">services</button>
+                    <div class="dropdown-content">
+                      <a href="services.html">Field visit</a>
+                      <a href="solutions.html">Solutions</a>
+                      <a href="products.html">Products</a>
+                    </div>
+                  </div>
+                <nav class="navigation">
+                    <div class="search-container">
+                        <div class="search-inner">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" id="searchBarNav" placeholder="Search..." oninput="searchWebsiteNav()" onkeydown="handleKeyPress(event)">
+                            <button id="clearBtnNav" onclick="clearSearchNav()" type="button">
+                                <i class="fas fa-times clear-icon"></i>
+                            </button>
+                        </div>
+                        <ul id="searchResultsNav" class="search-results"></ul>
+                    </div>
+                    
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="booking.html">Book Now</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="login.html">Login</a>
+                    <a href="registration.html" class="cta-button">Get Started</a>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Sustainable Solutions for Modern Agriculture</h1>
+                <p>Empowering farmers with innovative technologies and eco-friendly products.</p>
+                <a href="explore.html" class="primary-button">Explore Products</a>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Field Visit</h3>
+                    <p>Expert on-site consultation and diagnosis for crop optimization.</p>
+                    <a href="booking.html">Book Now</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Solutions</h3>
+                    <p>Advanced formulations for pest management and crop protection.</p>
+                    <a href="solutions.html">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-box"></i>
+                    <h3>Products</h3>
+                    <p>Wide range of herbicides, insecticides, and fungicides for healthy yields.</p>
+                    <a href="explore.html">Browse Products</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="collaborators">
+            <h2>Our Collaborators</h2>
+            <div class="collaborators-container">
+                <div class="collaborator"><span>UPL Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>PI Industries Ltd.</span> <span>Gurgaon, Haryana</span></div>
+                <div class="collaborator"><span>Bayer CropScience Ltd.</span> <span>Thane, Maharashtra</span></div>
+                <div class="collaborator"><span>Sumitomo Chemical India Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>BASF India Ltd.</span> <span>Gurugram, Haryana</span></div>
+                <div class="collaborator"><span>Insecticides India Ltd.</span> <span>Delhi</span></div>
+                <div class="collaborator"><span>Rallis India Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Excel Industries Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Bharat Rasayan Ltd.</span> <span>New Delhi</span></div>
+                <div class="collaborator"><span>Gharda Chemicals Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Sharda Cropchem Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Coromandel International Ltd.</span> <span>Secunderabad, Telangana</span></div>
+                <div class="collaborator"><span>Nagarjuna Agrichem Ltd.</span> <span>Hyderabad, Telangana</span></div>
+                <div class="collaborator"><span>Punjab Chemicals & Crop Protection Ltd.</span> <span>Mohali, Punjab</span></div>
+                <div class="collaborator"><span>Meghmani Organics Ltd.</span> <span>Ahmedabad, Gujarat</span></div>
+                <div class="collaborator"><span>HIL Ltd. (Hindustan Insecticides Ltd.)</span> <span>New Delhi</span></div>
+                <div class="collaborator"><span>Syngenta India Ltd.</span> <span>Pune, Maharashtra</span></div>
+                <div class="collaborator"><span>Monsanto India Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Adama India Pvt. Ltd.</span> <span>Hyderabad, Telangana</span></div>
+                <div class="collaborator"><span>Krishi Rasayan Group</span> <span>Kolkata, West Bengal</span></div>
+                <div class="collaborator"><span>Aimco Pesticides Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Anupam Rasayan India Ltd.</span> <span>Surat, Gujarat</span></div>
+                <div class="collaborator"><span>Atul Ltd.</span> <span>Valsad, Gujarat</span></div>
+                <div class="collaborator"><span>Best Agrolife Ltd.</span> <span>New Delhi</span></div>
+                <div class="collaborator"><span>Biostadt India Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Cheminova India Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Crystal Crop Protection Pvt. Ltd.</span> <span>New Delhi</span></div>
+                <div class="collaborator"><span>E.I.D. Parry (India) Ltd.</span> <span>Chennai, Tamil Nadu</span></div>
+                <div class="collaborator"><span>GSP Crop Science Pvt. Ltd.</span> <span>Ahmedabad, Gujarat</span></div>
+                <div class="collaborator"><span>Heranba Industries Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Indofil Industries Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Jubilant Life Sciences Ltd.</span> <span>Noida, Uttar Pradesh</span></div>
+                <div class="collaborator"><span>Kumar Organic Products Ltd.</span> <span>Bangalore, Karnataka</span></div>
+                <div class="collaborator"><span>Mangalam Seeds Ltd.</span> <span>Ahmedabad, Gujarat</span></div>
+                <div class="collaborator"><span>NACL Industries Ltd.</span> <span>Hyderabad, Telangana</span></div>
+                <div class="collaborator"><span>Pioneer Agro Industries Ltd.</span> <span>Ludhiana, Punjab</span></div>
+                <div class="collaborator"><span>Ravi Organics Ltd.</span> <span>Kanpur, Uttar Pradesh</span></div>
+                <div class="collaborator"><span>Sabero Organics Gujarat Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Sikko Industries Ltd.</span> <span>Ahmedabad, Gujarat</span></div>
+                <div class="collaborator"><span>Sulphur Mills Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Super Crop Safe Ltd.</span> <span>Ahmedabad, Gujarat</span></div>
+                <div class="collaborator"><span>Swal Corporation Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>UPL OpenAg</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Vallabh Pesticides Ltd.</span> <span>Ludhiana, Punjab</span></div>
+                <div class="collaborator"><span>Willowood Chemicals Pvt. Ltd.</span> <span>New Delhi</span></div>
+                <div class="collaborator"><span>Zodiac Agro Chemicals Ltd.</span> <span>Mumbai, Maharashtra</span></div>
+                <div class="collaborator"><span>Agrocel Industries Pvt. Ltd.</span> <span>Bhuj, Gujarat</span></div>
+            </div>
+        </section>
+        <button id="chat-toggle" onclick="toggleChat()">🌻 Chat</button>
+
+        <!-- Chat Container -->
+         <div id="full">
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <button onclick="clearChat()">🔄</button> <!-- Clear Chat Button -->
+                <span>Agrotech Bot🪴</span>
+                <button onclick="toggleChat()">❌</button> <!-- Close Chat Button -->
+            </div>
+            
+            <!-- Chat Box -->
+            <div id="chat-box"></div>
+            
+            <!-- Chat Footer -->
+            <div class="chat-footer">
+                <input type="text" id="user-input" placeholder="Ask me anything..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        </div>
+    
+        <script>
+            function toggleChat() {
+                let chatContainer = document.getElementById("chat-container");
+                let chatButton = document.getElementById("chat-toggle");
+    
+                if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
+                    chatContainer.style.display = "block"; // Open chat
+                    chatButton.style.display = "none"; // Hide chat button when open
+                } else {
+                    chatContainer.style.display = "none"; // Close chat
+                    chatButton.style.display = "block"; // Show chat button again
+                }
+            }
+    
+            function clearChat() {
+                document.getElementById("chat-box").innerHTML = ""; // Clears chat messages
+            }
+        </script>
+        <script src="cht.js"></script>
+    
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>About Agrotech</h3>
+                    <p>Agrotech is committed to delivering innovative agricultural solutions to empower farmers and ensure a sustainable future. We provide cutting-edge technologies and eco-friendly products.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Near SBI Bank, Devadurga Circle, Raichur Road, Sirwar</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 8296390210</p>
+                    <p><i class="fas fa-envelope"></i> vkumar25724@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Stay updated with our latest news and products!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-envelope"></i> Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom" align="center">
+                <p>© 2025 Agrotech. All rights reserved.</p>
+                <p>Devloped By Vinod Hosmani</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const toggleButton = document.querySelector('.toggle-button');
+        const sidebar = document.querySelector('.sidebar');
+        const content = document.querySelector('.content');
+
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            content.classList.toggle('active');
+        });
+        // 2. Close Sidebar When Clicking Outside (Important!)
+function closeSidebar() {
+    if (sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+        content.classList.remove('active');
+    }
+}
+
+document.addEventListener('click', (event) => {
+    if (!sidebar.contains(event.target) && !toggleButton.contains(event.target)) {
+        closeSidebar();
+    }
+});
+
+        function searchWebsiteNav() {
+            const searchTerm = document.getElementById('searchBarNav').value.toLowerCase();
+            const searchResults = document.getElementById('searchResultsNav');
+            searchResults.innerHTML = '';
+
+            const allText = document.body.innerText.toLowerCase();
+            if (searchTerm && allText.includes(searchTerm)) {
+                const resultItem = document.createElement('li');
+                resultItem.textContent = `Found "${searchTerm}" on this page.`;
+                searchResults.appendChild(resultItem);
+            } else if (searchTerm) {
+                const resultItem = document.createElement('li');
+                resultItem.textContent = `No results found for "${searchTerm}".`;
+                searchResults.appendChild(resultItem);
+            }
+
+            const clearBtn = document.getElementById('clearBtnNav');
+            clearBtn.style.display = searchTerm ? 'block' : 'none';
+        }
+
+        function clearSearchNav() {
+            document.getElementById('searchBarNav').value = '';
+            document.getElementById('searchResultsNav').innerHTML = '';
+
+            const clearBtn = document.getElementById('clearBtnNav');
+            clearBtn.style.display = 'none';
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const clearBtn = document.getElementById('clearBtnNav');
+            clearBtn.style.display = 'none';
+        });
+    </script>
+   <script>
+    const searchItems = [
+        { name: "Home", url: "index.html" },
+        { name: "About Us", url: "about.html" },
+        { name: "Services", url: "services.html" },
+        { name: "Contact", url: "contact.html" },
+        { name: "Registration", url: "registration.html" },
+        { name: "Products", url: "products.html" },
+        { name: "Login", url: "login.html" },
+        { name: "Book Now", url: "booking.html" },
+        { name: "Solution", url: "solutions.html" }
+    ];
+
+    function searchWebsiteNav() {
+        let input = document.getElementById("searchBarNav").value.toLowerCase();
+        let resultsContainer = document.getElementById("searchResultsNav");
+        resultsContainer.innerHTML = ""; // Clear previous results
+
+        if (input.trim() === "") {
+            resultsContainer.style.display = "none";
+            return;
+        }
+
+        let matches = searchItems.filter(item => item.name.toLowerCase().includes(input));
+
+        if (matches.length > 0) {
+            resultsContainer.style.display = "block";
+            matches.forEach(match => {
+                let li = document.createElement("li");
+                li.textContent = match.name;
+                li.onclick = () => window.location.href = match.url; // Navigate on click
+                resultsContainer.appendChild(li);
+            });
+        } else {
+            resultsContainer.style.display = "none";
+        }
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === "Enter") {
+            let input = document.getElementById("searchBarNav").value.toLowerCase();
+            let match = searchItems.find(item => item.name.toLowerCase() === input);
+            if (match) {
+                window.location.href = match.url; // Navigate if exact match found
+            }
+        }
+    }
+
+    function clearSearchNav() {
+        document.getElementById("searchBarNav").value = "";
+        document.getElementById("searchResultsNav").innerHTML = "";
+        document.getElementById("searchResultsNav").style.display = "none";
+    }
+   </script>
+    <script src="sildebar.js"></script>
+    <script src="searchbar.js"></script>
+</body>
+</html>

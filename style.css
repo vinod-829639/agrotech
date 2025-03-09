@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Resetting Defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #f5f5f5; /* Softer Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #fff;
+    padding: 45px;
+    width: 90%;
+    max-width: 520px; /* Slightly Wider */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Finer Shadow */
+    text-align: left;
+}
+
+h2 {
+    color: #2c3e50; /* Professional Dark Blue-Gray */
+    font-weight: 700; /* Stronger Weight */
+    margin-bottom: 24px; /* More Space */
+    font-size: 2.2rem; /* Slightly Larger */
+    letter-spacing: 0.5px;
+}
+
+/* Back Button Styles */
+.back-button {
+    display: inline-flex; /* Use inline-flex for alignment */
+    align-items: center; /* Vertically align icon and text */
+    color: #3498db; /* Blue color to match the button */
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500; /* Slightly bold */
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    padding: 10px 16px; /* Padding like input fields */
+    border: 1px solid #fff; /* Transparent Border */
+    border-radius: 6px; /* Rounded Corners */
+    margin-bottom: 20px; /* Spacing from heading */
+}
+
+.back-button:hover {
+    color: #2980b9; /* Darker Blue on Hover */
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); /* Added shadow */
+}
+
+.back-button i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Increased Gap */
+}
+
+input {
+    width: 100%;
+    padding: 14px; /* More Padding */
+    border: 1px solid #bdc3c7; /* Refined Border Color */
+    border-radius: 6px; /* More Subtle Curve */
+    font-size: 16px; /* Slightly Larger */
+    outline: none;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smoother Transition */
+    background: #fff;
+    color: #34495e; /* Darker Text */
+}
+
+input:focus {
+    border-color: #3498db; /* Cleaner Blue Focus */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input::placeholder {
+    color: #95a5a6; /* Slightly Darker */
+    font-style: normal;
+}
+
+button {
+    background-color: #3498db; /* Cleaner Button Color */
+    color: white;
+    padding: 15px; /* Adjusted Padding */
+    border: none;
+    cursor: pointer;
+    border-radius: 6px; /* Reduced Roundness */
+    font-size: 17px; /* Slightly Larger */
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Enhanced Transitions */
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); /* Better Shadow */
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker Blue on Hover */
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Enhanced Shadow */
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}

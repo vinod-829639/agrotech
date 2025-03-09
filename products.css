@@ -1,0 +1,388 @@
+/* products.css */
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, techy font */
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  background-color: #f0f2f5; /* Light, clean background */
+}
+
+/* Content Styles */
+.content {
+  margin-left: 250px;
+  padding: 40px;
+  transition: margin-left 0.3s ease;
+  width: calc(100% - 250px);
+  box-sizing: border-box;
+}
+
+.content.active {
+  margin-left: 70px;
+  width: calc(100% - 70px);
+}
+
+/* Main Content Styles - List-based with subtle highlights */
+main {
+  margin: 30px auto; /* Center the main content */
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  width: 85%; /* Reduced width for a contained look */
+  box-sizing: border-box;
+}
+
+/* Section Styles - "App-like" list items */
+section {
+  margin-bottom: 15px;
+  padding: 25px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+section:hover {
+  background-color: #f9f9f9;
+}
+
+/* New "Why AgroTech Chose" Section */
+.why-agrotech-chose {
+  background-color: #e9ecef; /* Light gray background for distinction */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.why-agrotech-chose h2 {
+  color: #212529; /* Darker text for heading */
+  font-size: 2em;
+  margin-bottom: 0.75em;
+  font-weight: 600;
+}
+
+.why-agrotech-chose p {
+  color: #495057;
+  margin-bottom: 1em;
+}
+
+section:last-child {
+  border-bottom: none;
+  box-shadow: none;
+  background-color: transparent;  /* Remove box shadow and background */
+  padding: 0;  /* Remove padding */
+}
+
+/* Heading Styles */
+section h2 {
+  color: #007bff;
+  font-size: 2.1em;
+  margin-bottom: 0.6em;
+  font-weight: 600;
+}
+
+section h3 {
+  color: #0056b3;
+  font-size: 1.5em;
+  margin-top: 1em;
+  font-weight: 500;
+}
+
+section h4 {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.4em;
+}
+
+/* Paragraph Styles */
+section p {
+  color: #555;
+  margin-bottom: 0.8em;
+}
+
+/* List Styles */
+section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+section ul li {
+  margin-bottom: 0.4em;
+  color: #333;
+  position: relative;
+  padding-left: 28px;
+}
+
+section ul li::before {
+  content: '\f058'; /* Font Awesome check circle */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: #007bff; /* Blue check circle */
+}
+
+/* "Why Choose Us" Section - Clean, simple */
+main > section:last-child {
+  text-align: left; /* Align text to the left */
+}
+
+main > section:last-child h2 {
+  color: #007bff; /* Blue color */
+  text-align: left; /* Align heading to the left */
+  margin-bottom: 0.8em;
+  font-size: 2.4em;
+}
+
+main > section:last-child ul {
+  display: block; /* Reset display */
+  margin-top: 20px; /* Add some top margin */
+}
+
+/* Link Styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #0056b3;
+}
+/* Chat Toggle Button */
+#full{
+  font-family: 'Roboto', sans-serif;
+  background-color: #ecf0f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:0;
+  margin: 0;
+
+}
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+  font-size: 15px;
+}
+
+#chat-toggle:hover {
+  background-color: #2980b9;
+}
+
+/* Chat Container */
+.chat-container {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 350px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  flex-direction: column;
+  z-index: 1000;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+/* Chat Header */
+.chat-header {
+  background: linear-gradient(to right, #3498db, #5dade2);
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chat-header span {
+  flex: 1;
+  text-align: center;
+}
+
+.chat-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.chat-header button:hover {
+  transform: rotate(90deg);
+}
+
+/* Chat Box */
+#chat-box {
+  height: 320px;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #95a5a6 #f0f0f0;
+}
+
+/* Scrollbar Styling */
+#chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+#chat-box::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+  background: #95a5a6;
+  border-radius: 4px;
+}
+
+#chat-box::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Chat Bubbles */
+.chat-bubble {
+  max-width: 80%;
+  padding: 10px;
+  margin: 6px;
+  border-radius: 16px;
+  word-wrap: break-word;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+.user-message {
+  background: #3498db;
+  color: white;
+  align-self: flex-end;
+}
+
+.bot-message {
+  background: #f8f8f8;
+  color: #333;
+  align-self: flex-start;
+  border: 1px solid #eee;
+}
+
+/* Chat Footer */
+.chat-footer {
+  display: flex;
+  padding: 8px;
+  background: #fcfcfc;
+  border-top: 1px solid #ddd;
+  align-items: center;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.chat-footer button {
+  margin-left: 8px;
+  padding: 10px 18px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 1rem;
+}
+
+.chat-footer button:hover {
+  background-color: #2980b9;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.dark-mode .chat-container {
+  background: #34495e;
+  border-color: #555;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .chat-header {
+  background: linear-gradient(to right, #2c3e50, #34495e);
+  border-bottom: 1px solid #444;
+}
+
+.dark-mode .bot-message {
+  background: #444;
+  color: #eee;
+  border-color: #555;
+}
+
+.dark-mode .chat-footer {
+  background: #2c3e50;
+  border-color: #444;
+}
+
+.dark-mode .chat-footer input {
+  background: #34495e;
+  color: #eee;
+  border-color: #444;
+}
+
+.dark-mode .chat-footer button {
+  background-color: #2c3e50;
+}
+
+.dark-mode .chat-footer button:hover {
+  background-color: #1e2d3b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .chat-container {
+      width: 90%;
+      max-width: 350px;
+      bottom: 20px;
+      right: 5%;
+      left: 5%;
+  }
+
+  #chat-toggle {
+      bottom: 15px;
+      right: 15px;
+  }
+
+  .chat-footer {
+      flex-direction: column;
+      padding: 6px;
+  }
+
+  .chat-footer button {
+      margin-left: 0;
+      margin-top: 6px;
+  }
+}

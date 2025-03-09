@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Agrotech</title>
+    <link rel="stylesheet" href="./about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">Agrotech</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="submit">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>About Agrotech</h1>
+        <section id="introduction">
+            <h2>Empowering Farmers with Intelligent Disease Detection</h2>
+            <p>At Agrotech, we're dedicated to transforming agriculture by providing farmers with cutting-edge solutions for early disease detection and targeted treatment. Our mission is to minimize crop loss, optimize resource utilization, and promote sustainable farming practices through intelligent technology.</p>
+            <p>We understand the challenges farmers face in identifying and managing plant diseases. That's why we've developed a comprehensive platform that leverages advanced algorithms and remote sensing technologies to detect diseases in their earliest stages, allowing for timely intervention and effective treatment.</p>
+        </section>
+
+        <section id="our-story">
+            <h2>Our Story</h2>
+            <p>Agrotech was founded in 2020 by Vinod Hosmani. Witnessing the devastating impact of crop diseases on local farms, they envisioned a solution that could combine their expertise to proactively protect crops and secure livelihoods.</p>
+            <p>Starting with a pilot program in raichur specially in sirwar taluk, Agrotech quickly gained recognition for its accurate disease detection capabilities and the significant cost savings it provided to farmers. Since then, we've expanded our services to cover a wide range of crops and regions, partnering with leading agricultural research institutions and technology providers.</p>
+            <p>Looking ahead, Agrotech is committed to pushing the boundaries of technology-driven agriculture. We're continuously giving tarining for field visitors and expanding our network of our company to provide farmers with the most comprehensive and effective solutions available. We envision a future where technology empowers farmers to grow healthy, abundant crops while minimizing their environmental impact.</p>
+        </section>
+
+        <section id="our-values">
+            <h2>Our Guiding Principles</h2>
+            <div class="value">
+                <h3><i class="fas fa-check-circle"></i> Accuracy</h3>
+                <p>We are committed to providing the most accurate disease detection results possible, ensuring that farmers can make informed decisions based on reliable data.</p>
+            </div>
+            <div class="value">
+                <h3><i class="fas fa-rocket"></i> Innovation</h3>
+                <p>We continuously training our field visitors and development to stay at the forefront of technology and provide our customers with the latest advancements in disease detection.</p>
+            </div>
+            <div class="value">
+                <h3><i class="fas fa-leaf"></i> Sustainability</h3>
+                <p>We believe in promoting sustainable farming practices by helping farmers minimize pesticide use and optimize resource utilization, contributing to a healthier environment.</p>
+            </div>
+            <div class="value">
+                <h3><i class="fas fa-users"></i> Customer Success</h3>
+                <p>We are dedicated to the success of our customers, providing personalized support and tailored solutions to meet their specific needs and challenges.</p>
+            </div>
+        </section>
+        <section id="our-solutions">
+            <h2>Our Solutions</h2>
+             <div class="solution">
+                <h3><i class="fas fa-search"></i> Disease Detection By Field Visitors</h3>
+                <p>Our core platform uses well trined field visitors to analyze and detection of crop diseases, using some sensor readings to detect plant diseases in their earliest stages.and explains the crop diseases to formres, allowing for timely intervention.</p>
+                <a href="services.html">Learn More</a>
+            </div>
+            <div class="solution">
+                <h3><i class="fas fa-hand-holding-medical"></i> Targeted Treatment Recommendations</h3>
+                <p>Based on the detected diseases, our platform provides specific treatment recommendations, including the optimal application of fungicides, biopesticides, and other control measures. Minimize pesticide use and maximize treatment effectiveness.</p>
+                <a href="solutions.html">Learn More</a>
+            </div>
+            <div class="solution">
+                <h3><i class="fas fa-flask"></i> Agrotech's Biocontrol Products</h3>
+                <p>We also offer a range of eco-friendly biocontrol solutions designed to effectively manage identified diseases while promoting soil health and overall plant well-being. Our products are rigorously tested and proven to be effective and safe for the environment.</p>
+                <a href="products.html">Learn More</a>
+            </div>
+        </section>
+
+        <section id="our-impact">
+            <h2>Our Impact</h2>
+            <p>Agrotech has helped farmers reduce crop losses by an average of 25%, decrease pesticide use by 15%, and increase overall profitability by 10%. Our platform is transforming the way farmers manage plant diseases, leading to more sustainable and productive agricultural practices.</p>
+        </section>
+
+        <section id="learn-more">
+            <h2>Ready to Protect Your Crops?</h2>
+            <p><a href="booking.html">book now for a field visit</a></p>
+        </section>
+
+    </div>
+    <button id="chat-toggle" onclick="toggleChat()">🌻 Chat</button>
+
+    <!-- Chat Container -->
+     <div id="full">
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">
+            <button onclick="clearChat()">🔄</button> <!-- Clear Chat Button -->
+            <span>Agrotech Bot 🪴</span>
+            <button onclick="toggleChat()">❌</button> <!-- Close Chat Button -->
+        </div>
+        
+        <!-- Chat Box -->
+        <div id="chat-box"></div>
+        
+        <!-- Chat Footer -->
+        <div class="chat-footer">
+            <input type="text" id="user-input" placeholder="Ask me anything..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function toggleChat() {
+            let chatContainer = document.getElementById("chat-container");
+            let chatButton = document.getElementById("chat-toggle");
+
+            if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
+                chatContainer.style.display = "block"; // Open chat
+                chatButton.style.display = "none"; // Hide chat button when open
+            } else {
+                chatContainer.style.display = "none"; // Close chat
+                chatButton.style.display = "block"; // Show chat button again
+            }
+        }
+
+        function clearChat() {
+            document.getElementById("chat-box").innerHTML = ""; // Clears chat messages
+        }
+    </script>
+    <script src="cht.js"></script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Agrotech</h3>
+                <p>Agrotech is dedicated to transforming agriculture by providing farmers with cutting-edge solutions for early disease detection and targeted treatment.</p>
+                <div class="social-links">
+                    <a href="[Facebook URL]"><i class="fab fa-facebook"></i></a>
+                    <a href="[Twitter URL]"><i class="fab fa-twitter"></i></a>
+                    <a href="[LinkedIn URL]"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                     <li><a href="booking.html">Book Now</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact-form">
+                <h3>Contact Us</h3>
+                <p>Address: [Near SBI Bank, Devadurga Circle, Raichur Road, Sirwar]</p>
+                <p>Email: <a href="mailto:[vkumar25724@gmail.com]">vkumar25724@gmail.com</a></p>
+                <p>Phone: 8296390210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Agrotech. All rights reserved.</p>
+           <p>Devloped By Vinod Hosmani</p>
+        </div>
+    </footer>
+   <script>
+    const searchInput = document.querySelector('.search-bar input');
+const searchButton = document.querySelector('.search-bar button');
+const suggestionsContainer = document.createElement('ul');
+const clearButton = document.createElement('span');
+
+suggestionsContainer.classList.add('suggestions', 'custom-suggestions');
+document.querySelector('.search-bar').appendChild(suggestionsContainer);
+
+clearButton.classList.add('clear-button');
+clearButton.innerHTML = '&#10006;'; // Unicode for 'X'
+document.querySelector('.search-bar').appendChild(clearButton);
+
+// Sample search suggestions with corresponding URLs
+const searchPages = {
+    "Home": "index.html",
+"Solutions": "solutions.html",
+"Book Now": "booking.html",
+"About Us": "about.html",
+"Contact": "contact.html",
+"Registration":"register.html",
+"Products":"products.html",
+"Services":"services.html",
+"Login":"login.html"
+};
+
+// Function to filter and show suggestions
+function showSuggestions(value) {
+    suggestionsContainer.innerHTML = '';
+    if (value.trim()) {
+        const filtered = Object.keys(searchPages).filter(term => term.toLowerCase().includes(value.toLowerCase()));
+        filtered.forEach(term => {
+            const li = document.createElement('li');
+            li.textContent = term;
+            li.classList.add('suggestion-item');
+            li.addEventListener('click', () => {
+                searchInput.value = term;
+                suggestionsContainer.innerHTML = '';
+                openPage(term);
+            });
+            suggestionsContainer.appendChild(li);
+        });
+    }
+}
+
+// Function to open the matched page
+function openPage(query) {
+    if (searchPages[query]) {
+        window.location.href = searchPages[query];
+    } else {
+        searchWithinPage(query);
+    }
+}
+
+// Function to highlight search results within the page
+function searchWithinPage(query) {
+    const elements = document.querySelectorAll('body *:not(script):not(style)');
+    elements.forEach(element => {
+        if (element.textContent.toLowerCase().includes(query.toLowerCase())) {
+            element.classList.add('highlighted-text');
+            setTimeout(() => element.classList.remove('highlighted-text'), 2000);
+        }
+    });
+}
+
+// Event listeners
+searchInput.addEventListener('input', (e) => {
+    showSuggestions(e.target.value);
+    clearButton.style.display = e.target.value ? 'block' : 'none';
+});
+
+searchButton.addEventListener('click', () => {
+    openPage(searchInput.value);
+});
+
+clearButton.addEventListener('click', () => {
+    searchInput.value = '';
+    clearButton.style.display = 'none';
+    suggestionsContainer.innerHTML = '';
+});
+
+// Updated styling for search bar and suggestions
+document.head.insertAdjacentHTML('beforeend', `
+    <style>
+        .search-bar {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+        .search-bar input[type="text"] {
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 1rem;
+            width: 100%;
+            padding-right: 35px;
+        }
+        .search-bar button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
+        }
+        .search-bar button:hover {
+            background-color: #2980b9;
+        }
+        .clear-button {
+            position: absolute;
+            right: 130px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #888;
+            display: none;
+        }
+        .clear-button:hover {
+            color: #333;
+        }
+        .custom-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 5px;
+            margin: 5px 0 0;
+            width: 100%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+        }
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+        .suggestion-item:hover {
+            background: #f0f0f0;
+        }
+        .highlighted-text {
+            background-color: yellow;
+        }
+    </style>
+`);
+
+// Hide suggestions initially
+searchInput.addEventListener('focus', () => {
+    if (searchInput.value.trim()) {
+        suggestionsContainer.style.display = 'block';
+    }
+});
+
+searchInput.addEventListener('input', () => {
+    if (searchInput.value.trim()) {
+        suggestionsContainer.style.display = 'block';
+    } else {
+        suggestionsContainer.style.display = 'none';
+    }
+});
+
+document.addEventListener('click', (e) => {
+    if (!document.querySelector('.search-bar').contains(e.target)) {
+        suggestionsContainer.style.display = 'none';
+    }
+});
+
+   </script>
+</body>
+</html>
