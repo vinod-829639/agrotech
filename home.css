@@ -938,8 +938,8 @@ a:hover {
 
     .header-logo-text {
         font-size: 1.5rem; /* Smaller logo text */
-        margin-left: auto;  /*Push logo to the right */
-        margin-right: 0;
+        margin-left: auto !important; /* Override any existing margin-left */
+        margin-right: 0 !important; /* Push logo to right */
     }
 
     /* Ensure navigation elements are hidden */
@@ -949,7 +949,7 @@ a:hover {
 
     /* Style the logo text */
     .logo-text {
-        font-size: 1.5rem;
+        font-size: 0; /* Important: remove the logo-text */
     }
 
     /* Revert .content to have full width and reset margin */
