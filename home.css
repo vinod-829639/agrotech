@@ -463,8 +463,7 @@ a:hover {
     }
      /* Add style to header */
     .header-logo-text {
-        margin-left: auto; /* Pushes logo to the right */
-        margin-right: 0; /* Removes the right margin */
+         margin-right: auto; /* Push logo to the left */
     }
    /* Hide Navigation Code On Smaller Screens*/
  /*   .sidebar.active + .content .header .navigation {
