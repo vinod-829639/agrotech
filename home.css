@@ -1,4 +1,6 @@
-/* General Styles */
+/* ========================================
+   General Styles (Mobile First)
+   ======================================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -6,6 +8,8 @@ body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
+    /* Default font size for mobile - can adjust */
+    font-size: 16px;
 }
 
 a {
@@ -18,32 +22,36 @@ a:hover {
     color: #0056b3;
 }
 
-/* Sidebar Styles */
+/* ========================================
+   Sidebar (Mobile Initially Hidden)
+   ======================================== */
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #2c3e50; /* Dark Blue */
+    width: 100%; /* Full width on mobile */
+    max-width: 250px; /* But no wider than 250px */
+    height: auto; /* Auto height for mobile */
+    background-color: #2c3e50;
     color: white;
     position: fixed;
     top: 0;
-    left: -250px; /* Initially hidden off-screen to the left */
-    padding: 20px;
+    left: -100%; /* Hidden off-screen */
+    padding: 1em; /* Use em for relative padding */
     box-sizing: border-box;
-    z-index: 100; /* Ensure it overlaps other content */
+    z-index: 100;
     opacity: 0;
     visibility: hidden;
     transition: left 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    overflow-y: auto;  /* Enable scrolling in sidebar */
 }
 
 .sidebar.active {
-    left: 0;  /* Slide in from the left when active */
+    left: 0;
     opacity: 1;
     visibility: visible;
 }
 
 .sidebar-header {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    font-size: 1.2em;
+    margin-bottom: 1em;
 }
 
 .sidebar-menu {
@@ -53,14 +61,14 @@ a:hover {
 }
 
 .sidebar-menu li {
-    margin-bottom: 10px;
+    margin-bottom: 0.5em;
 }
 
 .sidebar-menu a {
     color: white;
     text-decoration: none;
     display: block;
-    padding: 10px;
+    padding: 0.75em;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
@@ -69,33 +77,33 @@ a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Content Styles */
+/* ========================================
+   Content
+   ======================================== */
 .content {
-    position: relative; /* Add relative positioning */
-    transition: margin-left 0.3s ease; /* For smooth transitions */
-    /*margin-left: 0;  Remove */
+    position: relative;
+    transition: margin-left 0.3s ease;
+    /* Removed margin-left here */
 }
 
-/*.content.active { Remove This Line
-    margin-left: 250px; Remove this line to
-}*/
-
-/* Header Styles (inside content) */
+/* ========================================
+   Header (Mobile Styles)
+   ======================================== */
 .header {
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
     top: 0;
-    z-index: 99; /* Lower than sidebar */
+    z-index: 99;
 }
 
 .header-content {
     display: flex;
-    justify-content: flex-start; /* Distribute space evenly */
     align-items: center;
+    justify-content: space-between; /* Critical */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0.5em 1em; /* Smaller padding on mobile */
 }
 
 .toggle-button {
@@ -104,47 +112,44 @@ a:hover {
     color: #333;
     font-size: 1.5rem;
     cursor: pointer;
-    margin-right: 20px; /* Add some space after the button */
+    margin-right: 1em; /* Add space after button */
 }
 
-/* Add style to header */
 .header-logo-text {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #2ECC71; /* Green */
+    color: #2ECC71;
     font-family: 'Arial Black', sans-serif;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     margin-right: auto;
 }
 
-/* Navigation Bar Styles */
+/* Navigation Bar (Initially Hidden on Mobile) */
 .navigation {
-    display: flex; /* Use flexbox for horizontal alignment */
-    align-items: center; /* Vertically align items */
+    display: none; /* Hidden by default on small screens */
+    align-items: center;
 }
 
 .navigation a {
-    margin-left: 1.5rem; /* Space between links */
+    margin-left: 1em;
     color: #555;
     text-decoration: none;
 }
 
 .navigation a:hover {
-    color: #007bff; /* Change color on hover */
+    color: #007bff;
 }
 
-/* CTA Button (Sign-Up Button) in Navigation Bar */
 .navigation .cta-button {
     background-color: #2ECC71;
     color: white;
-    /* Reduced padding and font size for a smaller button */
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.5em 1em;
+    font-size: 0.8rem;
     border-radius: 30px;
     border: 2px solid #27AE60;
     transition: background-color 0.3s, color 0.3s, transform 0.3s ease, border-color 0.3s;
     font-weight: 600;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .navigation .cta-button:hover {
@@ -154,11 +159,12 @@ a:hover {
     border-color: #1E8449;
 }
 
-/* Search Container - Google-like */
+/* Search Container (Hidden on Mobile) */
 .navigation .search-container {
+    display: none;  /* Hidden initially */
     position: relative;
-    margin-left: 1.5rem; /* Add space before the search */
-    width: auto; /* Adjust width */
+    margin-left: 1em;
+    width: auto;
 }
 
 .navigation .search-inner {
@@ -167,7 +173,7 @@ a:hover {
     border: 1px solid #dfe1e5;
     border-radius: 24px;
     background-color: #fff;
-    padding: 0 0.5rem;
+    padding: 0 0.5em;
     box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
     transition: box-shadow 0.3s;
 }
@@ -179,12 +185,12 @@ a:hover {
 
 .navigation .search-icon {
     color: #9aa0a6;
-    padding: 0.5rem;
+    padding: 0.5em;
 }
 
 .navigation .search-container input {
     border: none;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5em 0.75em;
     font-size: 1rem;
     flex-grow: 1;
     outline: none;
@@ -202,7 +208,7 @@ a:hover {
 
 .navigation .clear-icon {
     color: #9aa0a6;
-    padding: 0.5rem;
+    padding: 0.5em;
     transition: color 0.3s;
 }
 
@@ -223,7 +229,7 @@ a:hover {
     margin: 0;
     width: 100%;
     display: none;
-    z-index: 101; /* Ensure it's above the content */
+    z-index: 101;
 }
 
 .navigation .search-container input:focus + ul {
@@ -231,7 +237,7 @@ a:hover {
 }
 
 .navigation .search-container ul li {
-    padding: 0.5rem 1rem;
+    padding: 0.5em 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -240,13 +246,14 @@ a:hover {
     background-color: #f0f0f0;
 }
 
-
-/* Hero Section */
+/* ========================================
+   Hero Section
+   ======================================== */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/pexels-tomfisk-1483880.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 5rem 2rem;
+    padding: 3em 1em; /* Reduced padding */
 }
 
 .hero-content {
@@ -255,21 +262,21 @@ a:hover {
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2rem; /* Smaller heading */
+    margin-bottom: 0.5em;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1rem;
+    margin-bottom: 1.5em;
 }
 
 .primary-button {
     background-color: #22dbf8;
     color: white;
-    padding: 1rem 2rem;
+    padding: 0.8em 1.5em; /* Adjusted padding */
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
 }
 
@@ -277,32 +284,35 @@ a:hover {
     background-color: #0056b3;
 }
 
-/* Services Section */
+/* ========================================
+   Services Section
+   ======================================== */
 .services {
-    padding: 4rem 2rem;
+    padding: 3em 1em;
     text-align: center;
 }
+
 .services h2 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Smaller heading */
     font-weight: bold;
-    color: #02fcf8; /* Green */
+    color: #02fcf8;
     font-family: 'Arial Black', sans-serif;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.5em;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .service-card {
     background-color: #fff;
-    padding: 2rem;
+    padding: 1.5em;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -311,14 +321,15 @@ a:hover {
 }
 
 .service-card i {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #28a745;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8em;
 }
 
 .service-card h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8em;
     color: #333;
+    font-size: 1.1rem;
 }
 
 .service-card p {
@@ -327,38 +338,40 @@ a:hover {
 
 .service-card a {
     display: inline-block;
-    margin-top: 1rem;
+    margin-top: 0.8em;
     color: #007bff;
 }
 
-/* Collaborators Section */
+/* ========================================
+   Collaborators Section
+   ======================================== */
 .collaborators {
-    padding: 4rem 2rem;
+    padding: 3em 1em;
     text-align: center;
     background-color: #f0f0f0;
 }
 
 .collaborators h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: #04f8e4; /* Green */
+    color: #04f8e4;
     font-family: 'Arial Black', sans-serif;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .collaborators-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
 }
 
 .collaborator {
     background-color: #fff;
-    padding: 1rem;
+    padding: 1em;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -372,32 +385,34 @@ a:hover {
 
 .collaborator span:last-child {
     color: #FF5733;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
-/* Footer Styles */
+/* ========================================
+   Footer Styles
+   ======================================== */
 .footer {
     background-color: #343a40;
     color: #fff;
-    padding: 2rem 2rem;
+    padding: 2em 1em;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
 }
 
 .footer-section h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5em;
 }
 
 .footer-section p {
     color: #ddd;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
 }
 
@@ -407,127 +422,67 @@ a:hover {
 }
 
 .footer-section li {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3em;
 }
 
 .footer-section a {
     color: #ddd;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .footer-bottom {
-    margin-top: 20px; /* Reduced margin */
-    padding-top: 15px; /* Reduced padding */
+    margin-top: 1.5em;
+    padding-top: 1em;
     border-top: 1px solid #34495e;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 .footer-bottom p {
     margin: 0;
-    font-size: 0.8rem; /* Reduced bottom text size */
-    align-items: center;
-    justify-content: center;
+    font-size: 0.7rem;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%);
-        width: 100%;
-        height: auto;
-        position: fixed;
-        box-shadow: none;
-        padding-bottom: 10px;
-        top: 0;
-        left: 0;
-    }
+/* ========================================
+   Mobile Specific Adjustments and Larger Screen Enhancements
+   ======================================== */
+@media (min-width: 768px) {
+    /* --- Desktop Specific Styles --- */
 
-    .sidebar.active {
-        transform: translateX(0);
+    .sidebar {
+        position: fixed;
+        left: 0; /* Always visible */
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0); /* No initial transform */
     }
 
     .content {
-        margin-left: 0;
-        padding: 10px;
-    }
-
-    .content.active {
-        margin-left: 0;
-    }
-
-    .header-content {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between; /* Added justify-content */
-    }
-     /* Add style to header */
-    .header-logo-text {
-        margin-left: auto; /* Pushes logo to the right */
-        margin-right: 0; /* Removes the right margin */
-    }
-   /* Hide Navigation Code On Smaller Screens*/
- /*   .sidebar.active + .content .header .navigation {
-       display: none;
-     } Remove*/
- .header-content .navigation,
-    .header-content .search-container,
-    .header-content .cta-button {
-       display: none; /* Hide navigation on mobile */
-    }
-    .navigation {
-        flex-direction: row;
-        align-items: center;
-        margin-left: auto;
-    }
-    .navigation a {
-        margin: 0 0.5rem;
-    }
-    .navigation .cta-button {
-      margin-left: 0.5rem;
-    }
-    .navigation .search-container {
-        margin-right: auto;
-        margin-left: 0;
-    }
-
-    .services-container,
-    .collaborators-container,
-    .footer-container {
-        grid-template-columns: 1fr;
-    }
-    .hero {
-        padding: 3rem 1rem;
-    }
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    .sidebar-menu li {
-        display: block; /* Horizontal menu */
-        margin-right: 0;
-    }
-
-    .sidebar-menu li a {
-      padding: 10px;
-      border: none;
-    }
-
-    .sidebar-menu li a i {
-      display: inline-block; /* Show icons on mobile */
-    }
-
-    .sidebar-menu li a:hover {
-      background-color: transparent; /* Remove hover effect on mobile */
-    }
-
-    .logo-text {
-      font-size: 1.5rem; /*Smaller Logo Text*/
+        margin-left: 250px; /* Push content to the right */
     }
 
     .toggle-button {
-      order: -1; /* Moves toggle button to the left */
+        display: none; /* Hide the toggle button */
+    }
+
+    .navigation {
+        display: flex; /* Show the navigation bar */
+    }
+
+    .navigation .search-container {
+        display: block; /* Show search on desktop */
+    }
+    .header-content {
+        justify-content: flex-start; /* Revert to left alignment */
+    }
+
+    .header-logo-text {
+        margin-right: auto; /* Push logo to the left */
     }
 }
+
 /* Basic Dropdown Button Styling */
 .dropdown {
     position: relative;
@@ -913,61 +868,4 @@ a:hover {
         margin-left: 0;
         margin-top: 6px;
     }
-}
-
-/* ========================================
-   Laptop-Specific Adjustments (Desktop View)
-   ======================================== */
-@media (min-width: 769px) and (max-width: 1440px) { /* Common Laptop Range */
-
-    /* Example: Adjust Header Padding */
-    .header-content {
-        padding: 1rem 2rem; /* Slightly smaller header */
-    }
-       .sidebar {
-        position: fixed;
-        left: 0; /* Always visible */
-        top: 0;
-        width: 250px;
-        height: 100vh;
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0); /* No initial transform */
-    }
-
-    .content {
-        margin-left: 250px; /* Push content to the right */
-    }
-
-    .toggle-button {
-        display: none; /* Hide the toggle button */
-    }
-
-    .navigation {
-        display: flex; /* Show the navigation bar */
-    }
-
-    .navigation .search-container {
-        display: block; /* Show search on desktop */
-    }
-    .header-content {
-        justify-content: flex-start; /* Revert to left alignment */
-    }
-
-    .header-logo-text {
-        margin-right: auto; /* Push logo to the left */
-    }
-
-    /* Example: Adjust Font Sizes for Readability */
-    body {
-        font-size: 16px; /* You can adjust this */
-    }
-
-    /* Example: Increase Spacing Between Nav Items */
-    .navigation a {
-        margin-left: 1.2rem; /* A bit more space */
-    }
-
-    /* --- Add any other laptop-specific adjustments here --- */
-    /* You can adjust font sizes, spacing, padding, widths of sections, etc. */
 }
