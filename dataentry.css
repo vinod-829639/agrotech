@@ -1,0 +1,243 @@
+/* General Styles */
+:root {
+    --primary-color: #0078d4; /* Microsoft Blue */
+    --secondary-color: #20a8d8; /* Light accent blue */
+    --background-color: #f3f2f1; /* Light gray background */
+    --text-color: #323130; /* Dark gray text */
+    --light-text-color: #605e5c; /* Lighter gray text */
+    --border-color: #c8c6c4; /* Gray border */
+    --hover-color: rgba(0, 120, 212, 0.1); /* Hover highlight */
+    --focus-shadow: rgba(0, 120, 212, 0.4); /* Focus shadow */
+    --error-color: #d13438; /* Error color */
+    --success-color: #107c10; /* Success color */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --border-radius: 4px;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    width: 800px;
+    max-width: 95%;
+}
+
+/* Header Styles */
+.form-header {
+    text-align: left;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.text-logo {
+    font-size: 1.8rem;  /* Adjust size as needed */
+    font-weight: 600;  /* Bolder weight */
+    color: var(--primary-color); /* Use primary color */
+    letter-spacing: -0.01em;
+    display: inline-block; /* Removes extra space */
+    padding: 4px 8px;   /* add some padding */
+    border-radius: 4px; /* Add a small radius for a subtle box */
+    background-color: rgba(0, 120, 212, 0.05); /* Light background color to highlight it more */
+}
+
+.form-header h1 {
+    color: var(--text-color);
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.form-header .subtitle {
+    color: var(--light-text-color);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+/* Input Container Styling */
+.input-container {
+    padding: 20px;           /* Add some padding around input area */
+    border: 1px solid var(--border-color); /* Add a subtle border */
+    border-radius: 6px;     /* Round the corners */
+    background-color: #f8f8f8;  /* A very subtle background color */
+    margin-bottom: 20px;    /* add space below the entire block*/
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+label i {
+    margin-right: 5px;
+}
+
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+input[type="text"]:hover,
+input[type="tel"]:hover {
+    background-color: var(--hover-color);
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--focus-shadow);
+}
+
+/* Product List Styles */
+.product-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.product-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--text-color);
+    outline: none;
+}
+
+.remove-product-btn {
+    background-color: #fff;
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+    border-radius: var(--border-radius);
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    outline: none;
+}
+
+.remove-product-btn:hover {
+    background-color: var(--error-color);
+    color: #fff;
+}
+
+.add-product-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    outline: none;
+}
+
+.add-product-btn:hover {
+    background-color: #005ea8;
+}
+
+button.submit-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    width: auto;
+    align-self: flex-start;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    outline: none;
+}
+
+button.submit-btn i {
+    margin-left: 8px;
+}
+
+button.submit-btn:hover {
+    background-color: #005ea8;
+}
+
+button.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 30px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-header {
+        text-align: center;
+    }
+
+    .form-header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-header h1 {
+        font-size: 1.75rem;
+    }
+}

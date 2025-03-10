@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Former Data Input</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="dataentry.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <header class="form-header">
+            <div class="logo">
+               <span class="text-logo">Former Data Entry</span> <!-- Text Logo -->
+            </div>
+            <p class="subtitle">Please provide the necessary information below.</p>
+        </header>
+        <div class="input-container"> <!-- Enclosing Input Container -->
+            <form id="dataForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="formerName"><i class="fas fa-user"></i> Former Name:</label>
+                        <input type="text" id="formerName" name="formerName" placeholder="Enter former's name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="visitorName"><i class="fas fa-users"></i> Visitor Name:</label>
+                        <input type="text" id="visitorName" name="visitorName" placeholder="Enter visitor's name" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phoneNumber"><i class="fas fa-phone"></i> Phone Number:</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address"><i class="fas fa-map-marker-alt"></i> Address:</label>
+                        <input type="text" id="address" name="address" placeholder="Enter address" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="productList"><i class="fas fa-list"></i> Product List</label>
+                    <div id="productRowsContainer">
+                        <div class="product-row">
+                            <input type="text" class="product-input" placeholder="Enter product name" required>
+                            <button type="button" class="remove-product-btn" aria-label="Remove Product"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <button type="button" id="addProductBtn" class="add-product-btn"><i class="fas fa-plus"></i> Add Product</button>
+                </div>
+
+                <button type="submit" class="submit-btn">Generate PDF <i class="fas fa-file-pdf"></i></button>
+            </form>
+        </div><!-- End Input Container -->
+    </div>
+
+    <script src="dataentry.js"></script>
+</body>
+</html>
