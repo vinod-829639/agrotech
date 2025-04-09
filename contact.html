@@ -92,39 +92,42 @@
         <button class="back-button" onclick="history.back()">Back</button>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            emailjs.init("CyW_4zn0tPzs2TjVV"); // ✅ Correctly initialize EmailJS
-        });
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        emailjs.init("CyW_4zn0tPzs2TjVV");
+    });
 
-        function sendEmail() {
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let subject = document.getElementById("subject").value;
-            let message = document.getElementById("message").value;
+    function sendEmail() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
 
-            if (!name || !email || !subject || !message) {
-                alert("Please fill out all fields before submitting.");
-                return;
-            }
-
-            let templateParams = {
-                from_name: name,
-                from_email: email,
-                subject: subject,
-                message: message
-            };
-
-            emailjs.send("service_281xb5j", "template_e6rygqh", templateParams)
-            .then(function(response) {
-                alert("Message sent successfully!");
-                document.getElementById("contactForm").reset();
-            })
-            .catch(function(error) {
-                console.error("EmailJS Error:", error);
-                alert("Failed to send message. Check the console for details.");
-            });
+        if (!name || !email || !subject || !message) {
+            alert("Please fill out all fields before submitting.");
+            return;
         }
-    </script>
+
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message
+        };
+
+        // Debug log
+        console.log("Sending with params:", templateParams);
+
+        emailjs.send("service_281xb5j", "template_e6rygqh", templateParams)
+        .then(function(response) {
+            console.log("SUCCESS!", response.status, response.text);
+            alert("Message sent successfully!");
+            document.getElementById("contactForm").reset();
+        }, function(error) {
+            console.error("EmailJS Error:", error);
+            alert("Failed to send message. Please check your EmailJS configuration.");
+        });
+    }
+</script>
 </body>
 </html>
