@@ -314,32 +314,48 @@
      background-color: #1e8449;
  }
 
- #our-impact {
+/* --- Add this rule for the PARENT container --- */
+
+.main-content {
+    /* This creates a new stacking context, which is necessary for z-index to work correctly. */
+    position: relative; 
+    z-index: 5; /* Lower z-index than the child we want to pop out */
+    
+    /* This is just for spacing, adjust as needed */
+    padding-top: 100px; 
+}
+
+
+/* --- Replace your old #our-impact CSS with this --- */
+
+#our-impact {
     background-color: #ecf0f1;
-    /* Using a single padding value makes it consistent on all sides */
-    padding: 40px; 
+    padding: 40px;
     border-radius: 20px;
     text-align: center;
-    width: 85%; /* Prevents the element from touching the screen edges */
-    margin-left: auto; /* These two lines center the container */
+    width: 85%;
+    margin-left: auto;
     margin-right: auto;
-
-    /* --- KEY CHANGES ARE HERE --- */
-
-    /* This pulls the entire section UP. Adjust -80px to a larger or smaller
-       negative number to move it up or down as you like. */
-    margin-top: -80px;
-
-    /* These properties prevent the navigation bar from hiding behind this section */
-    position: relative;
-    z-index: 10;
+    
+    /* --- NEW POSITIONING METHOD --- */
+    
+    /* This allows us to position it relative to the parent */
+    position: absolute;
+    top: 0; /* Align to the top of the parent */
+    left: 50%; /* Center horizontally */
+    
+    /* This is the key: it pulls the element up by 50% of its own height and 
+       shifts it left by 50% of its own width for perfect centering. */
+    transform: translate(-50%, -50%); 
+    
+    /* Make sure this section appears on top of other elements */
+    z-index: 10; 
 }
 
 #our-impact p {
     font-size: 1.4rem;
     color: #666;
-    /* Adds a little space between the "Our Impact" title and the paragraph */
-    margin-top: 20px; 
+    margin-top: 20px;
 }
  /* Learn More Section */
  #learn-more {
@@ -712,6 +728,7 @@ background-color: #1e2d3b;
 }
 
 }
+
 
 
 
