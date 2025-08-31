@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ⚠️ IMPORTANT: REPLACE "YOUR_API_KEY" WITH YOUR ACTUAL GOOGLE AI STUDIO API KEY
     // This key is not secure in client-side code and should only be used for personal testing.
-    const API_KEY = "AIzaSyCkmckckr5JYx82fbx6riwGe6xtLFLmjKE"; 
+    const API_KEY = "AIzaSyC8p3gJ0twAOHb0ish_zXWGe1kSS8ZGQHI"; 
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`;
 
     // --- END OF API CONFIGURATION ---
@@ -138,3 +138,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("user-input").addEventListener("keypress", handleKeyPress);
     window.sendMessage = sendMessage;
 });
+
