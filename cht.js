@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // --- START OF API CONFIGURATION ---
 
-    // ⚠️ IMPORTANT: REPLACE "YOUR_API_KEY" WITH YOUR ACTUAL GOOGLE AI STUDIO API KEY
-    // This key is not secure in client-side code and should only be used for personal testing.
-    const API_KEY = "AIzaSyC8p3gJ0twAOHb0ish_zXWGe1kSS8ZGQHI"; 
+    // ⚠️ STEP 1: Replace "YOUR_API_KEY" with your actual Google AI Studio API key.
+    // This is the most common source of errors.
+    const API_KEY = "AIzaSyCkmckckr5JYx82fbx6riwGe6xtLFLmjKE"; 
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`;
 
     // --- END OF API CONFIGURATION ---
@@ -14,16 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.toggleChat = function () {
         if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
-            chatContainer.style.display = "block"; // Open chat
-            chatButton.style.display = "none"; // Hide chat button
+            chatContainer.style.display = "block";
+            chatButton.style.display = "none";
         } else {
-            chatContainer.style.display = "none"; // Close chat
-            chatButton.style.display = "block"; // Show chat button
+            chatContainer.style.display = "none";
+            chatButton.style.display = "block";
         }
     };
 
     window.clearChat = function () {
-        document.getElementById("chat-box").innerHTML = ""; // Clears chat messages
+        document.getElementById("chat-box").innerHTML = "";
     };
 
     async function sendMessage() {
@@ -32,87 +32,70 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (userInput === "") return;
 
-        // Append user message
         let userMessage = document.createElement("div");
         userMessage.classList.add("chat-bubble", "user-message");
         userMessage.textContent = userInput;
         chatBox.appendChild(userMessage);
-        chatBox.scrollTop = chatBox.scrollHeight;
         
-        document.getElementById("user-input").value = ""; // Clear input immediately
+        document.getElementById("user-input").value = "";
+        chatBox.scrollTop = chatBox.scrollHeight;
 
         showTypingAnimation();
         
         try {
-            // Get the response from the new API function
             let botResponse = await getBotResponse(userInput);
-
             removeTypingAnimation();
 
             let botMessage = document.createElement("div");
             botMessage.classList.add("chat-bubble", "bot-message");
-            // Use innerHTML to correctly render formatting like line breaks from the AI
             botMessage.innerHTML = botResponse; 
             chatBox.appendChild(botMessage);
 
         } catch (error) {
-            removeTypingAnimation(); // Also remove typing animation on error
-            console.error("Error:", error);
+            removeTypingAnimation();
+            console.error("Detailed Error:", error); // Logs the full error to the developer console (F12)
+            
             let errorMessage = document.createElement("div");
             errorMessage.classList.add("chat-bubble", "bot-message");
-            errorMessage.textContent = "Sorry, I'm having trouble connecting. Please check the API key or try again later.";
+            // Provide a more helpful error message to the user
+            errorMessage.textContent = "Sorry, the connection failed. Please check the API key and make sure you are running this on a local server. (See browser console for details).";
             chatBox.appendChild(errorMessage);
         } finally {
             chatBox.scrollTop = chatBox.scrollHeight;
         }
     }
 
-    /**
-     * This function is now powered by the Google AI API.
-     * It sends the user's input along with company context to the AI model.
-     */
     async function getBotResponse(input) {
-        // Provide context to the AI about your company. This helps it answer questions accurately.
+        // This context helps the AI understand its role as an Agrotech chatbot.
         const agrotechContext = `You are a friendly and helpful chatbot for a company named "Agrotech". 
-        Here is some key information about Agrotech:
-        - Mission: We are committed to delivering innovative agricultural solutions to empower farmers and ensure a sustainable future. We provide cutting-edge technologies and eco-friendly products to boost agricultural productivity.
-        - What we do: We provide innovative agricultural solutions, including products like herbicides, insecticides, fungicides, and biopesticides. We also offer field visit services and tailored pest management solutions.
-        - Location: We are located near SBI Bank, Devadurga Circle, Raichur Road, Sirwar.
-        - Contact Info: Phone is +91 8296390210, Email is technology1@agrotech.com.
-        - Collaborators: We work with leading companies like UPL Ltd., PI Industries Ltd., and Bayer CropScience Ltd.
-
-        Based on this context, please answer the user's question. If the question is not related to Agrotech or agriculture, answer it as a general helpful assistant.
+        - Company Mission: We provide innovative agricultural solutions to empower farmers and ensure a sustainable future.
+        - Location: Near SBI Bank, Devadurga Circle, Raichur Road, Sirwar.
+        - Contact: Phone is +91 8296390210, Email is technology1@agrotech.com.
+        - Important: If asked a question unrelated to Agrotech or farming, answer it as a general helpful assistant.
 
         User's question: "${input}"`;
 
         const response = await fetch(API_URL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{
-                    parts: [{
-                        text: agrotechContext // We send the combined context and question
-                    }]
-                }]
+                contents: [{ parts: [{ text: agrotechContext }] }]
             })
         });
 
         if (!response.ok) {
             const errorDetails = await response.text();
-            throw new Error(`API request failed with status ${response.status}: ${errorDetails}`);
+            // This makes the error more specific if the API itself returns a message
+            throw new Error(`API Error: ${response.status} - ${errorDetails}`);
         }
 
         const data = await response.json();
         
-        if (!data.candidates || !data.candidates[0].content.parts[0].text) {
-             throw new Error("Invalid response format from API.");
+        if (!data.candidates || !data.candidates[0]?.content?.parts[0]?.text) {
+             throw new Error("Invalid response format from API. The response might be blocked or empty.");
         }
       
-        // Process the response to replace newlines with <br> tags for proper HTML rendering
         const botReply = data.candidates[0].content.parts[0].text.replace(/\n/g, '<br>');
-        
         return botReply;
     }
 
@@ -138,4 +121,3 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("user-input").addEventListener("keypress", handleKeyPress);
     window.sendMessage = sendMessage;
 });
-
