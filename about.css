@@ -329,7 +329,7 @@
 
     /* This pulls the entire section UP. Adjust -80px to a larger or smaller
        negative number to move it up or down as you like. */
-    margin-top: -80px;
+    margin-top: -500px;
 
     /* These properties prevent the navigation bar from hiding behind this section */
     position: relative;
@@ -714,5 +714,6 @@ background-color: #1e2d3b;
 }
 
 }
+
 
 
