@@ -317,7 +317,7 @@
  /* Impact Section */
  #our-impact {
      background-color: #ecf0f1;
-     padding: 40px;
+     padding: 0 40px 40px 40px;
      border-radius: 20px;
      text-align: center;
  }
@@ -698,3 +698,4 @@ background-color: #1e2d3b;
 }
 
 }
+
