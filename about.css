@@ -314,20 +314,6 @@
      background-color: #1e8449;
  }
 
-/* --- Add this rule for the PARENT container --- */
-
-.main-content {
-    /* This creates a new stacking context, which is necessary for z-index to work correctly. */
-    position: relative; 
-    z-index: 5; /* Lower z-index than the child we want to pop out */
-    
-    /* This is just for spacing, adjust as needed */
-    padding-top: 100px; 
-}
-
-
-/* --- Replace your old #our-impact CSS with this --- */
-
 #our-impact {
     background-color: #ecf0f1;
     padding: 40px;
@@ -728,6 +714,7 @@ background-color: #1e2d3b;
 }
 
 }
+
 
 
 
