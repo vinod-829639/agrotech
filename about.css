@@ -314,7 +314,6 @@
      background-color: #1e8449;
  }
 
- /* Impact Section */
  #our-impact {
     background-color: #ecf0f1;
     /* Using a single padding value makes it consistent on all sides */
@@ -342,7 +341,6 @@
     /* Adds a little space between the "Our Impact" title and the paragraph */
     margin-top: 20px; 
 }
-
  /* Learn More Section */
  #learn-more {
      text-align: center;
@@ -714,6 +712,7 @@ background-color: #1e2d3b;
 }
 
 }
+
 
 
 
