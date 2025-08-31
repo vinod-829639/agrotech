@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // ⚠️ STEP 1: Replace "YOUR_API_KEY" with your actual Google AI Studio API key.
     // This is the most common source of errors.
     const API_KEY = "AIzaSyCkmckckr5JYx82fbx6riwGe6xtLFLmjKE"; 
-    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`;
+    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
     // --- END OF API CONFIGURATION ---
 
@@ -121,3 +121,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("user-input").addEventListener("keypress", handleKeyPress);
     window.sendMessage = sendMessage;
 });
+
