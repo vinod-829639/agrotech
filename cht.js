@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const agrotechContext = `You are a friendly and helpful chatbot for a company named "Agrotech". 
         - Company Mission: We provide innovative agricultural solutions to empower farmers and ensure a sustainable future.
         - Location: Near SBI Bank, Devadurga Circle, Raichur Road, Sirwar.
-        - Contact: Phone is +91 8296390210, Email is technology1@agrotech.com.
+        - Contact: Phone is +91 8296390210, Email is contact@agrotech.in.
         - Important: If asked a question unrelated to Agrotech or farming, answer it as a general helpful assistant.
 
         User's question: "${input}"`;
@@ -121,4 +121,5 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("user-input").addEventListener("keypress", handleKeyPress);
     window.sendMessage = sendMessage;
 });
+
 
