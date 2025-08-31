@@ -316,16 +316,32 @@
 
  /* Impact Section */
  #our-impact {
-     background-color: #ecf0f1;
-     padding: 0 40px 40px 40px;
-     border-radius: 20px;
-     text-align: center;
- }
+    background-color: #ecf0f1;
+    /* Using a single padding value makes it consistent on all sides */
+    padding: 40px; 
+    border-radius: 20px;
+    text-align: center;
+    width: 85%; /* Prevents the element from touching the screen edges */
+    margin-left: auto; /* These two lines center the container */
+    margin-right: auto;
 
- #our-impact p {
-     font-size: 1.4rem;
-     color: #666;
- }
+    /* --- KEY CHANGES ARE HERE --- */
+
+    /* This pulls the entire section UP. Adjust -80px to a larger or smaller
+       negative number to move it up or down as you like. */
+    margin-top: -80px;
+
+    /* These properties prevent the navigation bar from hiding behind this section */
+    position: relative;
+    z-index: 10;
+}
+
+#our-impact p {
+    font-size: 1.4rem;
+    color: #666;
+    /* Adds a little space between the "Our Impact" title and the paragraph */
+    margin-top: 20px; 
+}
 
  /* Learn More Section */
  #learn-more {
@@ -698,4 +714,5 @@ background-color: #1e2d3b;
 }
 
 }
+
 
