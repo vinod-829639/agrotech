@@ -29,7 +29,42 @@
             <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
         </ul>
     </div>
-
+     <div class="content">
+        <header class="header">
+            <div class="header-content">
+                <button class="toggle-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <span class="header-logo-text">Agrotech</span>
+                <div class="dropdown">
+                    <button class="dropdown-button">services</button>
+                    <div class="dropdown-content">
+                      <a href="services.html">Field visit</a>
+                      <a href="solutions.html">Solutions</a>
+                      <a href="products.html">Products</a>
+                    </div>
+                  </div>
+                <nav class="navigation">
+                    <div class="search-container">
+                        <div class="search-inner">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" id="searchBarNav" placeholder="Search..." oninput="searchWebsiteNav()" onkeydown="handleKeyPress(event)">
+                            <button id="clearBtnNav" onclick="clearSearchNav()" type="button">
+                                <i class="fas fa-times clear-icon"></i>
+                            </button>
+                        </div>
+                        <ul id="searchResultsNav" class="search-results"></ul>
+                    </div>
+                    
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="booking.html">Book Now</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="login.html">Login</a>
+                    <a href="registration.html" class="cta-button">Get Started</a>
+                </nav>
+            </div>
+        </header>
     <div class="container">
         <h1>About Agrotech</h1>
         <section id="introduction">
@@ -453,6 +488,7 @@ document.addEventListener('click', (e) => {
    </script>
 </body>
 </html>
+
 
 
 
