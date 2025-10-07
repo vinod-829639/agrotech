@@ -57,6 +57,178 @@
 .sidebar-menu a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+/* Content Styles */
+.content {
+    position: relative; /* Add relative positioning */
+    transition: margin-left 0.3s ease; /* For smooth transitions */
+    /*margin-left: 0;  Remove */
+}
+
+/*.content.active { Remove This Line
+    margin-left: 250px; Remove this line to
+}*/
+
+/* Header Styles (inside content) */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    z-index: 99; /* Lower than sidebar */
+}
+
+.header-content {
+    display: flex;
+    justify-content: flex-start; /* Distribute space evenly */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.toggle-button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 20px; /* Add some space after the button */
+}
+
+/* Add style to header */
+.header-logo-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2ECC71; /* Green */
+    font-family: 'Arial Black', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    margin-right: auto;
+}
+
+/* Navigation Bar Styles */
+.navigation {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Vertically align items */
+}
+
+.navigation a {
+    margin-left: 1.5rem; /* Space between links */
+    color: #555;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* CTA Button (Sign-Up Button) in Navigation Bar */
+.navigation .cta-button {
+    background-color: #2ECC71;
+    color: white;
+    /* Reduced padding and font size for a smaller button */
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    border: 2px solid #27AE60;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s ease, border-color 0.3s;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.navigation .cta-button:hover {
+    background-color: #27AE60;
+    color: #fff;
+    transform: translateY(-2px);
+    border-color: #1E8449;
+}
+
+/* Search Container - Google-like */
+.navigation .search-container {
+    position: relative;
+    margin-left: 1.5rem; /* Add space before the search */
+    width: auto; /* Adjust width */
+}
+
+.navigation .search-inner {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    background-color: #fff;
+    padding: 0 0.5rem;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    transition: box-shadow 0.3s;
+}
+
+.navigation .search-inner:hover,
+.navigation .search-inner:focus-within {
+    box-shadow: 0 2px 8px rgba(32, 33, 36, 0.35);
+}
+
+.navigation .search-icon {
+    color: #9aa0a6;
+    padding: 0.5rem;
+}
+
+.navigation .search-container input {
+    border: none;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    flex-grow: 1;
+    outline: none;
+    background-color: transparent;
+    color: #202124;
+}
+
+.navigation .search-container button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation .clear-icon {
+    color: #9aa0a6;
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+.navigation .clear-icon:hover {
+    color: #202124;
+}
+
+.navigation .search-container ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: none;
+    z-index: 101; /* Ensure it's above the content */
+}
+
+.navigation .search-container input:focus + ul {
+    display: block;
+}
+
+.navigation .search-container ul li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navigation .search-container ul li:hover {
+    background-color: #f0f0f0;
+}
+
  .container {
      max-width: 1200px;
      margin: 0 auto;
@@ -661,6 +833,7 @@ background-color: #1e2d3b;
 }
 
 }
+
 
 
 
