@@ -1027,10 +1027,119 @@
         <p>© 2025 Agricultural Market. All rights reserved.</p>
             <p>Devloped By Vinod Hosmani</p>
     </div>
+ <script>
+        const toggleButton = document.querySelector('.toggle-button');
+        const sidebar = document.querySelector('.sidebar');
+        const content = document.querySelector('.content');
 
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            content.classList.toggle('active');
+        });
+        // 2. Close Sidebar When Clicking Outside (Important!)
+function closeSidebar() {
+    if (sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+        content.classList.remove('active');
+    }
+}
+
+document.addEventListener('click', (event) => {
+    if (!sidebar.contains(event.target) && !toggleButton.contains(event.target)) {
+        closeSidebar();
+    }
+});
+
+        function searchWebsiteNav() {
+            const searchTerm = document.getElementById('searchBarNav').value.toLowerCase();
+            const searchResults = document.getElementById('searchResultsNav');
+            searchResults.innerHTML = '';
+
+            const allText = document.body.innerText.toLowerCase();
+            if (searchTerm && allText.includes(searchTerm)) {
+                const resultItem = document.createElement('li');
+                resultItem.textContent = `Found "${searchTerm}" on this page.`;
+                searchResults.appendChild(resultItem);
+            } else if (searchTerm) {
+                const resultItem = document.createElement('li');
+                resultItem.textContent = `No results found for "${searchTerm}".`;
+                searchResults.appendChild(resultItem);
+            }
+
+            const clearBtn = document.getElementById('clearBtnNav');
+            clearBtn.style.display = searchTerm ? 'block' : 'none';
+        }
+
+        function clearSearchNav() {
+            document.getElementById('searchBarNav').value = '';
+            document.getElementById('searchResultsNav').innerHTML = '';
+
+            const clearBtn = document.getElementById('clearBtnNav');
+            clearBtn.style.display = 'none';
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const clearBtn = document.getElementById('clearBtnNav');
+            clearBtn.style.display = 'none';
+        });
+    </script>
+   <script>
+    const searchItems = [
+        { name: "Home", url: "index.html" },
+        { name: "About Us", url: "about.html" },
+        { name: "Services", url: "services.html" },
+        { name: "Contact", url: "contact.html" },
+        { name: "Registration", url: "registration.html" },
+        { name: "Products", url: "products.html" },
+        { name: "Login", url: "login.html" },
+        { name: "Book Now", url: "booking.html" },
+        { name: "Solution", url: "solutions.html" }
+    ];
+
+    function searchWebsiteNav() {
+        let input = document.getElementById("searchBarNav").value.toLowerCase();
+        let resultsContainer = document.getElementById("searchResultsNav");
+        resultsContainer.innerHTML = ""; // Clear previous results
+
+        if (input.trim() === "") {
+            resultsContainer.style.display = "none";
+            return;
+        }
+
+        let matches = searchItems.filter(item => item.name.toLowerCase().includes(input));
+
+        if (matches.length > 0) {
+            resultsContainer.style.display = "block";
+            matches.forEach(match => {
+                let li = document.createElement("li");
+                li.textContent = match.name;
+                li.onclick = () => window.location.href = match.url; // Navigate on click
+                resultsContainer.appendChild(li);
+            });
+        } else {
+            resultsContainer.style.display = "none";
+        }
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === "Enter") {
+            let input = document.getElementById("searchBarNav").value.toLowerCase();
+            let match = searchItems.find(item => item.name.toLowerCase() === input);
+            if (match) {
+                window.location.href = match.url; // Navigate if exact match found
+            }
+        }
+    }
+
+    function clearSearchNav() {
+        document.getElementById("searchBarNav").value = "";
+        document.getElementById("searchResultsNav").innerHTML = "";
+        document.getElementById("searchResultsNav").style.display = "none";
+    }
+    </script>
 </body>
 
 </html>
+
 
 
 
