@@ -835,5 +835,255 @@ background-color: #1e2d3b;
 }
 
 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 100%;
+        height: auto;
+        position: fixed;
+        box-shadow: none;
+        padding-bottom: 10px;
+        top: 0;
+        left: 0;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .content {
+          margin-left: 0;
+        padding: 10px;
+    }
+
+    .content.active {
+        margin-left: 0;
+    }
+
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; /* Added justify-content */
+    }
+     /* Add style to header */
+    .header-logo-text {
+         margin-right: auto; /* Push logo to the left */
+    }
+   /* Hide Navigation Code On Smaller Screens*/
+ /*   .sidebar.active + .content .header .navigation {
+       display: none;
+     } Remove*/
+ .header-content .navigation,
+    .header-content .search-container,
+    .header-content .cta-button {
+       display: none; /* Hide navigation on mobile */
+    }
+    .navigation {
+        flex-direction: row;
+        align-items: center;
+        margin-left: auto;
+    }
+    .navigation a {
+        margin: 0 0.5rem;
+    }
+    .navigation .cta-button {
+      margin-left: 0.5rem;
+    }
+    .navigation .search-container {
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+    .services-container,
+    .collaborators-container,
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    .hero {
+        padding: 3rem 1rem;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .sidebar-menu li {
+        display: block; /* Horizontal menu */
+        margin-right: 0;
+    }
+
+    .sidebar-menu li a {
+      padding: 10px;
+      border: none;
+    }
+
+    .sidebar-menu li a i {
+      display: inline-block; /* Show icons on mobile */
+    }
+
+    .sidebar-menu li a:hover {
+      background-color: transparent; /* Remove hover effect on mobile */
+    }
+
+    .logo-text {
+      font-size: 1.5rem; /*Smaller Logo Text*/
+    }
+
+    .toggle-button {
+      order: -1; /* Moves toggle button to the left */
+    }
+}
+/* Basic Dropdown Button Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Hover effect for the button */
+  .dropdown-button:hover,
+  .dropdown-button:focus {
+    background-color: #3e8e41;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+  }
+  
+  /* Modern Dropdown Button Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background-color: #3498db; /* A more modern blue */
+    color: #fff;
+    padding: 12px 20px; /* Adjust padding for a sleeker look */
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px; /* Pill-shaped button */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    font-weight: 500; /* Slightly bolder text */
+    outline: none; /* Remove default focus outline */
+}
+
+.dropdown-button:hover,
+.dropdown-button:focus {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Modern Dropdown Button Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background-color: #3498db; /* A more modern blue */
+    color: #fff;
+    padding: 12px 30px; /* Increased Horizontal Padding */
+    min-width: 120px; /* Set a Minimum Width */
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px; /* Pill-shaped button */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    font-weight: 500; /* Slightly bolder text */
+    outline: none; /* Remove default focus outline */
+    text-align: center; /* Center the text if necessary */
+}
+
+.dropdown-button:hover,
+.dropdown-button:focus {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0; /* Align to the right of the button */
+    background-color: #fff;
+    min-width: 220px; /* Slightly wider dropdown */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    z-index: 1;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow for rounded corners */
+    transform: translateY(5px); /* Add a little space below the button */
+    opacity: 0; /* Fade in effect */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    pointer-events: none; /* Content not clickable when hidden */
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #eee; /* Lighter border */
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5; /* Lighter gray on hover */
+}
+
+/* Show the dropdown menu on hover and focus (Accessibility) */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content { /* Added focus-within */
+    display: block;
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Remove the space below the button */
+    pointer-events: auto; /* Make content clickable */
+}
+
+/* Style the last item in dropdown */
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* Style the active link (optional) */
+.dropdown-content a.active {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Keep show class styling but make animation smooth */
+.dropdown.show .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+ /* Hide Navigation Code On Smaller Screens*/
+   @media (max-width: 768px) {
+    /* Add the following code so content of navigation will be disable when slide bar is enabled in small screen */
+   .sidebar.active + .content .header .navigation,
+   .header-content .navigation,
+    .header-content .search-container,
+    .header-content .cta-button {
+        display: none; /* Hide navigation on mobile */
+     }
+    }
+    
 
 
