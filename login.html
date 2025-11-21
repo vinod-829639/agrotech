@@ -9,178 +9,148 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #cff2f7, #d4f5d6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+       body {
+    margin: 0;
+    height: 100vh;
+    background: #0c0f16;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    color: #cfd3db;
+}
 
-        .container {
-            background: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 350px;
-            text-align: center;
-        }
-        h2 {
-          font-size: 2rem;
-    font-weight: bold;
-    color: #2ECC71; /* Green */
-    font-family: 'Arial Black', sans-serif;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    margin-right: auto;
-        }
+/* Subtle animated grid */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(#1d2333 1px, transparent 1px),
+        linear-gradient(90deg, #1d2333 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.08;
+}
 
-        label {
-            font-size: 16px;
-            font-weight: bold;
-            color: #555;
-            display: block;
-            margin-bottom: 5px;
-            transition: color 0.3s ease-in-out;
-           }
+/* Container */
+.container {
+    width: 420px;
+    padding: 40px;
+    background: rgba(18, 23, 34, 0.9);
+    border: 1px solid #1f2635;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 255, 180, 0.12);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
 
-        input {
-            padding: 12px;
-            margin-bottom: 15px;
-           border: 2px solid #ccc;
-           border-radius: 8px;
-           font-size: 16px;
-            width: 90%;
-            outline: none;
-            transition: all 0.3s ease-in-out;
-            background: #f8f8f8;
-            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
-            }
+/* Cyber hologram shield */
+.cyber-shield {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 25px;
+    background: url('https://i.imgur.com/siZPcPP.png') no-repeat center/contain;
+    filter: drop-shadow(0 0 8px #00ffc8);
+    opacity: 0.9;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%,100% { filter: drop-shadow(0 0 5px #00ffc8); }
+    50% { filter: drop-shadow(0 0 15px #00ffc8); }
+}
+
+h2 {
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: #00ffc8;
+    font-weight: 600;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 8px;
+    background: #0f1420;
+    border: 1px solid #2a3349;
+    font-size: 15px;
+    color: #cfd3db;
+    outline: none;
+    transition: 0.25s;
+}
 
 input:focus {
-    border-color: #00bcd4;
-    background: #fff;
-    box-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
+    border-color: #00ffc8;
+    box-shadow: 0 0 8px rgba(0, 255, 200, 0.4);
 }
 
-        .btn-container { display: flex; justify-content: space-between; }
-        button {
-            background: #00bcd4;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-            width: 48%;
-        }
-        button:hover { background: #0097a7; }
-        .back-btn { background: #f44336; }
-        .back-btn:hover { background: #d32f2f; }
-        p { margin-top: 10px; font-size: 14px; }
-        a { color: #007BFF; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        .gsi-material-button {
-  background-color: WHITE;
-  background-image: none;
-  border: 1px solid #747775;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #1f1f1f;
-  cursor: pointer;
-  font-family: 'Roboto', arial, sans-serif;
-  font-size: 14px;
-  height: 40px;
-  letter-spacing: 0.25px;
-  outline: none;
-  overflow: hidden;
-  padding: 0 12px;
-  position: relative;
-  text-align: center;
-  -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
-  transition: background-color .218s, border-color .218s, box-shadow .218s;
-  vertical-align: middle;
-  white-space: nowrap;
-  width: auto;
-  max-width: 400px;
-  min-width: min-content;
+/* Buttons */
+button {
+    width: 48%;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.gsi-material-button .gsi-material-button-icon {
-  height: 20px;
-  margin-right: 12px;
-  min-width: 20px;
-  width: 20px;
+.login-btn {
+    background: #00ffc8;
+    color: #041014;
 }
 
-.gsi-material-button .gsi-material-button-content-wrapper {
-  -webkit-align-items: center;
-  align-items: center;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  height: 100%;
-  justify-content: space-between;
-  position: relative;
-  width: 100%;
+.login-btn:hover {
+    background: #00d6a6;
 }
 
-.gsi-material-button .gsi-material-button-contents {
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  font-family: 'Roboto', arial, sans-serif;
-  font-weight: 500;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  vertical-align: top;
+.back-btn {
+    background: #242b37;
+    color: #cfd3db;
 }
 
-.gsi-material-button .gsi-material-button-state {
-  -webkit-transition: opacity .218s;
-  transition: opacity .218s;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+.back-btn:hover {
+    background: #303849;
 }
 
-.gsi-material-button:disabled {
-  cursor: default;
-  background-color: #ffffff61;
-  border-color: #1f1f1f1f;
+/* Google button */
+.google-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #1a222f;
+    color: #cfd3db;
+    border: 1px solid #2a3349;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.gsi-material-button:disabled .gsi-material-button-contents {
-  opacity: 38%;
+.google-btn:hover {
+    background: #202a3b;
+    border-color: #00ffc8;
+    box-shadow: 0 0 10px rgba(0, 255, 200, 0.25);
 }
 
-.gsi-material-button:disabled .gsi-material-button-icon {
-  opacity: 38%;
+/* Links */
+p {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
 }
 
-.gsi-material-button:not(:disabled):active .gsi-material-button-state, 
-.gsi-material-button:not(:disabled):focus .gsi-material-button-state {
-  background-color: #303030;
-  opacity: 12%;
+a {
+    color: #00ffc8;
+    text-decoration: none;
 }
 
-.gsi-material-button:not(:disabled):hover {
-  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
-}
-
-.gsi-material-button:not(:disabled):hover .gsi-material-button-state {
-  background-color: #303030;
-  opacity: 8%;
+a:hover {
+    text-decoration: underline;
 }
 
   </style>
@@ -275,3 +245,4 @@ input:focus {
     </script>
 </body>
 </html>
+
